@@ -31,7 +31,9 @@ public class TextTransformation {
 			}
 		}
 		*/
-        cleanString = string1.replaceAll("-()", "");
+        cleanString = string1.replaceAll("\\(", "");
+        cleanString = cleanString.replaceAll("-", "");
+        cleanString = cleanString.replaceAll("\\)", "");
         out.println("Phone number or string without -() is: " + cleanString);
         return cleanString;
     }
