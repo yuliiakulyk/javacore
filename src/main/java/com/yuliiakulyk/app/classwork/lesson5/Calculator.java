@@ -9,12 +9,11 @@ import static java.lang.Math.*;
  */
 public class Calculator {
 
-    public static void calculateCircleArea () {
+    public static double calculateCircleArea (double radius) {
         Scanner scanner = new Scanner (System.in);
-        System.out.println("Please, enter circle radius: ");
-        double radius = scanner.nextDouble();
         double circleArea = Math.pow(radius, 2) * Math.PI;
         System.out.println("Area is " + circleArea);
+        return circleArea;
     }
     public static void calculateBigger() {
         double area1;
@@ -39,6 +38,7 @@ public class Calculator {
         }
         return pifagorTrue;
     }
+    /*
     public static void main () {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a:");
@@ -53,6 +53,7 @@ public class Calculator {
             System.out.println("a, b, c are not sides of right-angled triangle");
         }
     }
+    */
     public static boolean isOdd (int number) {
         boolean odd;
         if ((number % 2) == 0) {
