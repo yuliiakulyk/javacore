@@ -1,6 +1,7 @@
-package main.java.com.yuliiakulyk.utils.runners;
+package com.yuliiakulyk.app.runners;
 
-import main.java.com.yuliiakulyk.utils.convertors.PrimitiveConvertor;
+
+import com.yuliiakulyk.app.utils.convertors.PrimitiveConvertor;
 
 public class Lesson3Runner {
 	public static void main (String args[]) {
