@@ -1,18 +1,22 @@
 package com.yuliiakulyk.app.homework.lesson4;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import static java.lang.System.out;
 
 /**
  * Created by 123 on 15.10.2016.
  */
 public class BiologyCalc {
-    public int getIdealWeight (double height, String gender) {
-        int idealWeight;
+    public double getIdealWeight (int height, String gender) {
+        double idealWeight;
         if (gender.equals("male")) {
-            idealWeight = (int) Math.round((height - 100)*1.15);
+            idealWeight =  (height - 100)*1.15;
+            //new BigDecimal ((height - 100)*1.15).setScale(, RoundingMode.HALF_UP).intValue();
+            //Math.round ((height - 100)*1.15);
         } else {
-            idealWeight = (int) Math.round((height - 110)*1.15);
+            idealWeight = (height - 110)*1.15;
         }
+        out.println("Ideal weight for a " + gender + " of " + height + " cm height is " + idealWeight + " kg.");
         return idealWeight;
     }
     public double getWaterNorm (String gender, double weight) {
@@ -22,6 +26,8 @@ public class BiologyCalc {
         } else {
             waterNorm = new BigDecimal(weight*31/1000).setScale(1, RoundingMode.HALF_UP).doubleValue();
         }
+        waterNorm = new BigDecimal (waterNorm).setScale(1, RoundingMode.HALF_UP).doubleValue();
+        out.println("Water norm for a " + gender + " of " + weight + " kg weight is " + waterNorm + " litres.");
         return waterNorm;
     }
 }
