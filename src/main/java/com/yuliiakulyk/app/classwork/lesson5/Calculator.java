@@ -7,7 +7,7 @@ import static java.lang.Math.*;
 /**
  * Created by 123 on 15.10.2016.
  */
-public class CircleArea {
+public class Calculator {
 
     public static void calculateCircleArea () {
         Scanner scanner = new Scanner (System.in);
@@ -52,6 +52,15 @@ public class CircleArea {
         } else {
             System.out.println("a, b, c are not sides of right-angled triangle");
         }
+    }
+    public static boolean isOdd (int number) {
+        boolean odd;
+        if ((number % 2) == 0) {
+            odd = true;
+        } else {
+            odd = false;
+        }
+        return odd;
     }
 
 }
