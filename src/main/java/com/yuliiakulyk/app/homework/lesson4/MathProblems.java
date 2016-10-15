@@ -1,6 +1,14 @@
 package com.yuliiakulyk.app.homework.lesson4;
 import static java.lang.System.out;
+
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Created by 123 on 15.10.2016.
@@ -71,6 +79,47 @@ public class MathProblems {
         out.println("Riding " + distance + " km takes " + travelTime + " hours at speed " + speed + " km/h.");
         return travelTime;
     }
-
+    public String getQuadraticEquationRoot (int a, int b, int c) {
+        double D = Math.pow(b, 2) - (4 * a * c);
+        out.println("D = " + D);
+        String x = "none";
+        if (D >= 0) {
+            double x1 = (- b + Math.sqrt(D)) / (2 * a);
+            x1 = new BigDecimal(x1).setScale(2, RoundingMode.HALF_UP).doubleValue();
+            x = Double.toString(x1);
+        }
+        out.println("Root of the equation is: " + x);
+        return x;
+    }
+    public String numberBinaryNotation (int number){
+        String binaryNotation = Integer.toString(number, 2);
+        out.println(number + " = " + binaryNotation);
+        return binaryNotation;
+    }
+    public String number16Notation (int number){
+        String Notation16 = Integer.toString(number, 16);
+        out.println(number + " = " + Notation16);
+        return Notation16;
+    }
+    /* public String dayOfWeek (String dateString) {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd.mm.yyyy");
+        Date date;
+         try {
+            date = formatter.parse(dateString);
+        }
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        int day1 = calendar.get(Calendar.DAY_OF_WEEK);
+        String day = "";
+        ArrayList<String> daysOfWeek = new ArrayList<String> (Arrays.asList("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"));
+        for (int i = 0; i < 7; i++) {
+            if (day1 == i) {
+                day = daysOfWeek.get(i);
+            }
+        }
+        out.println(date + " is " + day + ".");
+        return day;
+    }
+    */
 
 }

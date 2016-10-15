@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 
 import static org.junit.Assert.assertEquals;
 
@@ -75,6 +76,29 @@ public class MathProblemsTest {
         MathProblems mathProblemsObject = new MathProblems();
         Assert.assertEquals(expRes, mathProblemsObject.getTravelTime (distance, speed), delta);
     }
+    @Test
+    public void getQuadraticEquationRootTest () {
+        int a = 4;
+        int b = -20;
+        int c = 25;
+        String expRes = "2.5";
+        MathProblems mathProblemsObject = new MathProblems();
+        Assert.assertEquals(expRes, mathProblemsObject.getQuadraticEquationRoot(a, b, c));
 
+    }
+    @Test
+    public void numberBinaryNotationTest () {
+        int number = 26;
+        String expRes = "11010";
+        MathProblems mathProblemsObject = new MathProblems();
+        Assert.assertEquals(expRes, mathProblemsObject.numberBinaryNotation(number));
+    }
+    @Test
+    public void number16NotationTest () {
+        int number = 244677;
+        String expRes = "3bbc5";
+        MathProblems mathProblemsObject = new MathProblems();
+        Assert.assertEquals(expRes, mathProblemsObject.number16Notation(number));
+    }
 
 }
