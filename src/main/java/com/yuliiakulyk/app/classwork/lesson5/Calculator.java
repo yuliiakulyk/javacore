@@ -1,4 +1,4 @@
-package com.yuliiakulyk.app.classwork.lesson5;
+package main.java.com.yuliiakulyk.app.classwork.lesson5;
 
 import java.util.Scanner;
 
@@ -15,14 +15,14 @@ public class Calculator {
         System.out.println("Area is " + circleArea);
         return circleArea;
     }
-    public static void calculateBigger() {
-        double area1;
+    public static void calculateBigger(double area1, double area2) {
+        /* double area1;
         double area2;
         Scanner scanner = new Scanner (System.in);
         System.out.println("Enter area1:");
         area1 = scanner.nextDouble();
         System.out.println("Enter area2:");
-        area2 = scanner.nextDouble();
+        area2 = scanner.nextDouble(); */
         if (area1 > area2 ) {
             System.out.println("Area1 > area2");
         } else if (area1 < area2){
