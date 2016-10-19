@@ -1,9 +1,9 @@
-package com.yuliiakulyk.app.runners;
+package com.yuliiakulyk.runners.utils.convertors;
 
 
 import com.yuliiakulyk.app.utils.convertors.PrimitiveConvertor;
 
-public class Lesson3Runner {
+public class PrimitiveConvertorRunner {
 	public static void main (String args[]) {
 		PrimitiveConvertor convertor = new PrimitiveConvertor ();
 		float float2 = 110f;

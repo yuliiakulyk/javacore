@@ -68,6 +68,14 @@ public class MathProblemsTest {
         Assert.assertEquals(expRes, mathProblemsObject.areDividedByEachOther(number1, number2));
     }
     @Test
+    public void areDividedByEachOtherTest2 () {
+        int number1 = 24;
+        int number2 = 8;
+        boolean expRes = true;
+        MathProblems mathProblemsObject = new MathProblems();
+        Assert.assertEquals(expRes, mathProblemsObject.areDividedByEachOther(number1, number2));
+    }
+    @Test
     public void getTravelTimeTest () {
         double distance = 750;
         double speed = 100;

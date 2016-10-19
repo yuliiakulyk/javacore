@@ -1,4 +1,6 @@
-package com.yuliiakulyk.app.classwork.lesson3;
+package com.yuliiakulyk.runners;
+
+import com.yuliiakulyk.app.classwork.lesson3.NarrowingCasting;
 
 /**
  * Created by Юлия on 08.10.2016.
@@ -6,6 +8,7 @@ package com.yuliiakulyk.app.classwork.lesson3;
 public class NarrowingCastingRunner {
     public static void main(String[] args) {
         NarrowingCasting casting = new NarrowingCasting ();
-        casting.narrowing();
+        float float1 = 5.777f;
+        int int1 = casting.narrowing(float1);
     }
 }

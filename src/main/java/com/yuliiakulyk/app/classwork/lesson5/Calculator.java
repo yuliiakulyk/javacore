@@ -1,4 +1,4 @@
-package main.java.com.yuliiakulyk.app.classwork.lesson5;
+package com.yuliiakulyk.app.classwork.lesson5;
 
 import java.util.Scanner;
 
@@ -10,12 +10,11 @@ import static java.lang.Math.*;
 public class Calculator {
 
     public static double calculateCircleArea (double radius) {
-        Scanner scanner = new Scanner (System.in);
+        // Scanner scanner = new Scanner (System.in);
         double circleArea = Math.pow(radius, 2) * Math.PI;
-        System.out.println("Area is " + circleArea);
         return circleArea;
     }
-    public static void calculateBigger(double area1, double area2) {
+    public static double calculateBigger(double area1, double area2) {
         /* double area1;
         double area2;
         Scanner scanner = new Scanner (System.in);
@@ -23,17 +22,22 @@ public class Calculator {
         area1 = scanner.nextDouble();
         System.out.println("Enter area2:");
         area2 = scanner.nextDouble(); */
+        double max;
         if (area1 > area2 ) {
             System.out.println("Area1 > area2");
+            max = area1;
         } else if (area1 < area2){
             System.out.println("Area2 > area1");
+            max = area2;
         } else {
             System.out.println("Area1 = area2");
+            max = area1;
         }
+        return max;
     }
     public static boolean rightAngledTriangleCheck (double a, double b, double c) {
         boolean pifagorTrue = false;
-        if (c*c == a*a + b*b) {
+        if ((c*c == a*a + b*b) || (a*a == b*b + c*c) || (b*b == a*a + b*b)) {
             pifagorTrue = true;
         }
         return pifagorTrue;
@@ -57,9 +61,9 @@ public class Calculator {
     public static boolean isOdd (int number) {
         boolean odd;
         if ((number % 2) == 0) {
-            odd = true;
-        } else {
             odd = false;
+        } else {
+            odd = true;
         }
         return odd;
     }

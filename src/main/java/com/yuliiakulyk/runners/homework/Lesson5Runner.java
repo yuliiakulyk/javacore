@@ -1,7 +1,7 @@
-package main.java.com.yuliiakulyk.runners.homework;
+package com.yuliiakulyk.runners.homework;
 
 import java.util.Scanner;
-import main.java.com.yuliiakulyk.app.classwork.lesson5.Calculator;
+import com.yuliiakulyk.app.classwork.lesson5.Calculator;
 import static java.lang.System.out;
 
 
@@ -9,7 +9,7 @@ import static java.lang.System.out;
  * Created by 123 on 15.10.2016.
  */
 public class Lesson5Runner {
-    public static void main() {
+    public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
         boolean doAgain = true;
         do {
@@ -21,11 +21,11 @@ public class Lesson5Runner {
             out.println("5 - exit the program");
             int problemNumber = scanner.nextInt();
             if (problemNumber == 1) {
-                out.println("Enter a length:");
+                out.println("Enter length of 'a' side:");
                 double a = scanner.nextDouble();
-                out.println("Enter b length:");
+                out.println("Enter length of 'b' side:");
                 double b = scanner.nextDouble();
-                out.println("Enter c length:");
+                out.println("Enter length of 'c' side:");
                 double c = scanner.nextDouble();
                 if (Calculator.rightAngledTriangleCheck(a, b, c)) {
                     out.println("a, b, c are sides of a right-angled triangle.");
