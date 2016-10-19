@@ -8,7 +8,7 @@ import com.yuliiakulyk.app.classwork.lesson5.Calculator;
  * Created by 123 on 15.10.2016.
  */
 public class Lesson5RunnerMenu {
-    public static void main () {
+    public static void main() {
         Scanner scanner = new Scanner(System.in);
         boolean doAgain = true;
         do {
