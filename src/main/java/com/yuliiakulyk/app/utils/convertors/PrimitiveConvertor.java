@@ -1,4 +1,4 @@
-package main.java.com.yuliiakulyk.utils.convertors;
+package com.yuliiakulyk.app.utils.convertors;
 
 public class PrimitiveConvertor {
 
