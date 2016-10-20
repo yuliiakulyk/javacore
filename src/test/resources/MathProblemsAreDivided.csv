@@ -1,0 +1,10 @@
+"number1, number2, are they divided by each other",,
+5,5,TRUE
+5,1,TRUE
+5,10,TRUE
+10,5,TRUE
+5,5000,TRUE
+27,3,TRUE
+3,7,FALSE
+9,2,FALSE
+10000,10001,FALSE

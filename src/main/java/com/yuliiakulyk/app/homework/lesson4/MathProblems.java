@@ -42,7 +42,12 @@ public class MathProblems {
     }
     public int sumNProgressionElements (int firstElement, int step, int numberOfElements) {
         // int sum = (firstElement * 2 + (numberOfElements - 1) * step) / 2 * numberOfElements;
-        int sum = firstElement;
+        int sum;
+        if (numberOfElements > 0) {
+            sum = firstElement;
+        } else {
+            sum = 0;
+        }
         for (int i = 1; i <= numberOfElements - 1; i++) {
             sum = sum + (firstElement + step * i);
         }
@@ -71,7 +76,11 @@ public class MathProblems {
         if (max % min == 0) {
             isDivided = true;
         }
-        out.println("Number " + max + " is divided by " + min + " without remainder.");
+        if (isDivided == true) {
+            out.println("Number " + max + " is divided by " + min + " without remainder.");
+        } else {
+            out.println("Number " + max + " is NOT divided by " + min + " without remainder.");
+        }
         return isDivided;
     }
     public double getTravelTime (double distance, double speed) {

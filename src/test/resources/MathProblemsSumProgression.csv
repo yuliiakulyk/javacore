@@ -1,0 +1,9 @@
+"firstElement, step, numberOfElements, sum of progression",,,
+1,2,5,25
+2,5,6,87
+3,6,8,192
+4,8,9,324
+-5,-10,5,-125
+0,2,3,6
+5,0,2,10
+5,5,0,0
