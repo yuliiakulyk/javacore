@@ -1,4 +1,4 @@
-package com.yuliiakulyk.runners.homework;
+package com.yuliiakulyk.runners.homework.lesson5;
 
 import java.util.Scanner;
 import com.yuliiakulyk.app.classwork.lesson5.Calculator;

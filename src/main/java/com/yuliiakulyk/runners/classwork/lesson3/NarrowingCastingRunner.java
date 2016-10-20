@@ -1,4 +1,4 @@
-package com.yuliiakulyk.runners;
+package com.yuliiakulyk.runners.classwork.lesson3;
 
 import com.yuliiakulyk.app.classwork.lesson3.NarrowingCasting;
 
