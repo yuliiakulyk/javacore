@@ -17,24 +17,25 @@ import java.io.IOException;
  */
 @RunWith(JUnitParamsRunner.class)
 public class BiologyCalcDataDrivenTest {
+    BiologyCalc biologyCalc;
 
     @Before
     public void preConditionsForClass() throws IOException {
-        BiologyCalc biologyCalc = new BiologyCalc();
-    } // не работает, если в тестовых методах убрать создание объекта класса BiologyCalc, ошибка
+        biologyCalc = new BiologyCalc();
+    }
 
     @Test
     @FileParameters(value = "src/test/resources/BiologyCalcIdealWeight.csv",
             mapper = CsvWithHeaderMapper.class)
     public void getIdealWeightTest (int height, String gender, double expOut) {
-        BiologyCalc biologyCalc = new BiologyCalc();
+        //BiologyCalc biologyCalc = new BiologyCalc();
         Assert.assertEquals(expOut, biologyCalc.getIdealWeight(height, gender), 0.001);
     }
     @Test
     @FileParameters(value = "src/test/resources/BiologyCalcWaterNorm.csv",
             mapper = CsvWithHeaderMapper.class)
     public void getWaterNormTest (String gender, double weight, double expOut) {
-        BiologyCalc biologyCalc = new BiologyCalc();
+        // BiologyCalc biologyCalc = new BiologyCalc();
         Assert.assertEquals(expOut, biologyCalc.getWaterNorm(gender, weight), 0.01);
     }
 
