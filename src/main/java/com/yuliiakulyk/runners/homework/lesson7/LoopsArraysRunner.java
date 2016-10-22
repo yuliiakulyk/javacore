@@ -19,7 +19,8 @@ public class LoopsArraysRunner {
             out.println("3 - print array of 15  numbers from 0 to 9, number of its even elements.");
             out.println("4 - print array of 15  numbers from 0 to 999, its min and max elements.");
             out.println("5 - print 2-dimensional array [8][5] of random numbers from 10 to 99.");
-            out.println("6 - exit.");
+            out.println("6 - print 2-dimensional array [8][5] of random numbers from 1 to 999 right-aligned.");
+            out.println("7 - exit.");
             int problemNumber = scanner.nextInt();
             if (problemNumber == 1) {
                 getEven();
@@ -32,8 +33,11 @@ public class LoopsArraysRunner {
             } else if (problemNumber ==5) {
                 populate2DimensionalArray();
             }else if (problemNumber ==6) {
+                printArrayRightAlignment();
+            } else if (problemNumber ==7) {
                 doAgain = false;
             }
+
         } while (doAgain);
     }
     public static int[] getEven() {
@@ -82,6 +86,20 @@ public class LoopsArraysRunner {
             printArrayOneLine(array[i]);
         }
     return array;
+    }
+    public static int[][] printArrayRightAlignment () {
+        int [][] array = new int [8] [5];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = randomNumbers(array[i].length, 1, 999);
+            printArrayFormatted(array[i]);
+        }
+        return array;
+    }
+    public static void printArrayFormatted (int [] array) {
+        for (int i = 0; i < array.length; i++) {
+            out.printf("%5d", array[i]);
+        }
+        out.println();
     }
     public static int[] randomNumbers (int elements, int min, int max) {
         int [] array = new int [elements];
