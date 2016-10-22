@@ -20,7 +20,8 @@ public class LoopsArraysRunner {
             out.println("4 - print array of 15  numbers from 0 to 999, its min and max elements.");
             out.println("5 - print 2-dimensional array [8][5] of random numbers from 10 to 99.");
             out.println("6 - print 2-dimensional array [8][5] of random numbers from 1 to 999 right-aligned.");
-            out.println("7 - exit.");
+            out.println("7 - add int numbers.");
+            out.println("8 - exit.");
             int problemNumber = scanner.nextInt();
             if (problemNumber == 1) {
                 getEven();
@@ -35,7 +36,12 @@ public class LoopsArraysRunner {
             }else if (problemNumber ==6) {
                 printArrayRightAlignment();
             } else if (problemNumber ==7) {
+                add();
+            }
+            else if (problemNumber ==8) {
                 doAgain = false;
+            } else {
+                out.println("There is no such an option. Please, try again");
             }
 
         } while (doAgain);
@@ -100,6 +106,22 @@ public class LoopsArraysRunner {
             out.printf("%5d", array[i]);
         }
         out.println();
+    }
+    public static int add () {
+        int sum = 0;
+        String input = "";
+        Scanner scanner = new Scanner(System.in);
+        out.println("Type 'exit' to stop entering numbers to add.");
+        while (input != "exit") {
+            out.println("Enter a number to add: ");
+            input = scanner.next();
+            if (input.equals("exit")) {
+                break;
+            }
+            sum+=Integer.parseInt(input);
+        }
+        out.println("Sum = " + sum);
+        return sum;
     }
     public static int[] randomNumbers (int elements, int min, int max) {
         int [] array = new int [elements];
