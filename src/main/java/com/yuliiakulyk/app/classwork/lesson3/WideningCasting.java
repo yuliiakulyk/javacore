@@ -5,7 +5,7 @@ package com.yuliiakulyk.app.classwork.lesson3;
  */
 public class WideningCasting {
 
-    public double widening (byte byte1) {
+    public double widening(byte byte1) {
         short short1;
         int int1;
         long long1;
@@ -13,7 +13,6 @@ public class WideningCasting {
         double double1;
         double1 = float1 = long1 = int1 = short1 = byte1;
         System.out.println(double1);
-    return double1;
+        return double1;
     }
-
-    }
+}

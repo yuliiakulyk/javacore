@@ -14,13 +14,15 @@ import java.util.Arrays;
 @RunWith(value = Parameterized.class)
 public class ParameterizedTest {
     private int numberA, numberB, expected;
-//parameters pass via this constructor
+
+    //parameters pass via this constructor
     public ParameterizedTest(int numberA, int numberB, int expected) {
         this.numberA = numberA;
         this.numberB = numberB;
         this.expected = expected;
     }
-//Declares parameters here
+
+    //Declares parameters here
     @Parameterized.Parameters(name = "{index}: multiply({0}*{1})={2}") //test log output
     public static Iterable<Object[]> data1() {
         return Arrays.asList(new Object[][]{
@@ -30,6 +32,7 @@ public class ParameterizedTest {
                 {4, 5, 20}
         });
     }
+
     @Test
     public void test_add() {
         Assert.assertEquals(expected, MathFunc.multiply(numberA, numberB));

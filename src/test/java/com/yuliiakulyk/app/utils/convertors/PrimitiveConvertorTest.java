@@ -14,6 +14,7 @@ public class PrimitiveConvertorTest {
         char expRes = 'A';
         Assert.assertEquals(expRes, convertor.floatToChar(float1));
     }
+
     @Test
     public void intToCharTest() {
         PrimitiveConvertor convertor = new PrimitiveConvertor();
@@ -21,6 +22,7 @@ public class PrimitiveConvertorTest {
         char expRes = 'A';
         Assert.assertEquals(expRes, convertor.intToChar(int1));
     }
+
     @Test
     public void charToIntTest() {
         PrimitiveConvertor convertor = new PrimitiveConvertor();

@@ -13,7 +13,8 @@ import java.util.Arrays;
 @RunWith(value = Parameterized.class)
 public class MathFuncTest {
     private int numberA, numberB, expected;
-//parameters pass via this constructor
+
+    //parameters pass via this constructor
     public MathFuncTest(int numberA, int numberB, int expected) {
         this.numberA = numberA;
         this.numberB = numberB;
@@ -38,6 +39,7 @@ public class MathFuncTest {
         });
 
     }
+
     @Test
 
     public void test_add() {
@@ -45,11 +47,4 @@ public class MathFuncTest {
         Assert.assertEquals(expected, MathFunc.multiply(numberA, numberB));
 
     }
-
-    /*@Test //JUnit framework annotation
-    public void multiplyTest(){
-        int a = 1, b = 2, expRes = 2;
-        MathFunc mathFuncObject = new MathFunc ();
-        Assert.assertEquals(expRes, mathFuncObject.multiply(a,b));
-    } //close method */
-} //close class
+}

@@ -1,7 +1,9 @@
 package com.yuliiakulyk.runners.homework.lesson5;
 
 import java.util.Scanner;
+
 import com.yuliiakulyk.app.classwork.lesson5.Calculator;
+
 import static java.lang.System.out;
 
 
@@ -43,7 +45,7 @@ public class Lesson5Runner {
                     out.println(number + " is odd.");
                 } else {
                     out.println(number + " is even.");
-                } 
+                }
             } else if (problemNumber == 4) {
                 out.println("Enter area1:");
                 double area1 = scanner.nextDouble();

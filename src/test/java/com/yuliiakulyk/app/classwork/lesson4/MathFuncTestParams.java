@@ -4,6 +4,7 @@ import junitparams.FileParameters;
 import junitparams.JUnitParamsRunner;
 import junitparams.mappers.CsvWithHeaderMapper;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -12,6 +13,13 @@ import org.junit.runner.RunWith;
  */
 @RunWith(JUnitParamsRunner.class)
 public class MathFuncTestParams {
+    MathFunc mathFunc;
+
+    @Before
+    public void preconditions() {
+        mathFunc = new MathFunc();
+    }
+
     @Test
     @FileParameters(value = "src/test/resources/testdata.csv",
             mapper = CsvWithHeaderMapper.class)

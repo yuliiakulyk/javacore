@@ -8,23 +8,25 @@ import org.junit.Test;
  */
 public class CalculatorTest {
     @Test
-    public void calculateCircleAreaTest () {
+    public void calculateCircleAreaTest() {
         Calculator calculator = new Calculator();
         double radius = 7.7;
         double expRes = 186.1706;
         double delta = 0.1;
         Assert.assertEquals(expRes, calculator.calculateCircleArea(radius), delta);
     }
+
     @Test
-    public void calculateCircleAreaTest2 () {
+    public void calculateCircleAreaTest2() {
         Calculator calculator = new Calculator();
         double radius = 0;
         double expRes = 0;
         double delta = 0.1;
         Assert.assertEquals(expRes, calculator.calculateCircleArea(radius), delta);
     }
+
     @Test
-    public void calculateBiggerTest () {
+    public void calculateBiggerTest() {
         Calculator calculator = new Calculator();
         double area1 = 7.7;
         double area2 = 9.9;
@@ -32,8 +34,9 @@ public class CalculatorTest {
         double expRes = 9.9;
         Assert.assertEquals(expRes, calculator.calculateBigger(area1, area2), delta);
     }
+
     @Test
-    public void calculateBiggerTest2 () {
+    public void calculateBiggerTest2() {
         Calculator calculator = new Calculator();
         double area1 = 101.1;
         double area2 = 9.9;
@@ -41,8 +44,9 @@ public class CalculatorTest {
         double expRes = 101.1;
         Assert.assertEquals(expRes, calculator.calculateBigger(area1, area2), delta);
     }
+
     @Test
-    public void calculateBiggerTest3 () {
+    public void calculateBiggerTest3() {
         Calculator calculator = new Calculator();
         double area1 = 101.1;
         double area2 = 101.1;
@@ -50,8 +54,9 @@ public class CalculatorTest {
         double expRes = 101.1;
         Assert.assertEquals(expRes, calculator.calculateBigger(area1, area2), delta);
     }
+
     @Test
-    public void calculateBiggerTest4 () {
+    public void calculateBiggerTest4() {
         Calculator calculator = new Calculator();
         double area1 = 101.10;
         double area2 = 101.100;
@@ -59,8 +64,9 @@ public class CalculatorTest {
         double expRes = 101.1;
         Assert.assertEquals(expRes, calculator.calculateBigger(area1, area2), delta);
     }
+
     @Test
-    public void rightAngledTriangleCheckTest () {
+    public void rightAngledTriangleCheckTest() {
         Calculator calculator = new Calculator();
         double a = 5;
         double b = 4;
@@ -68,8 +74,9 @@ public class CalculatorTest {
         boolean expRes = true;
         Assert.assertEquals(expRes, calculator.rightAngledTriangleCheck(a, b, c));
     }
+
     @Test
-    public void rightAngledTriangleCheckTest2 () {
+    public void rightAngledTriangleCheckTest2() {
         Calculator calculator = new Calculator();
         double a = 5;
         double b = 4;
@@ -77,8 +84,9 @@ public class CalculatorTest {
         boolean expRes = false;
         Assert.assertEquals(expRes, calculator.rightAngledTriangleCheck(a, b, c));
     }
+
     @Test
-    public void rightAngledTriangleCheckTest3 () {
+    public void rightAngledTriangleCheckTest3() {
         Calculator calculator = new Calculator();
         double a = 3;
         double b = 4;
@@ -86,8 +94,9 @@ public class CalculatorTest {
         boolean expRes = true;
         Assert.assertEquals(expRes, calculator.rightAngledTriangleCheck(a, b, c));
     }
+
     @Test
-    public void rightAngledTriangleCheckTest4 () {
+    public void rightAngledTriangleCheckTest4() {
         Calculator calculator = new Calculator();
         double a = 4;
         double b = 3;
@@ -95,22 +104,25 @@ public class CalculatorTest {
         boolean expRes = true;
         Assert.assertEquals(expRes, calculator.rightAngledTriangleCheck(a, b, c));
     }
+
     @Test
-    public void isOddTest () {
+    public void isOddTest() {
         Calculator calculator = new Calculator();
         int number = 5;
         boolean expRes = true;
         Assert.assertEquals(expRes, calculator.isOdd(number));
     }
+
     @Test
-    public void isOddTest2 () {
+    public void isOddTest2() {
         Calculator calculator = new Calculator();
         int number = 10;
         boolean expRes = false;
         Assert.assertEquals(expRes, calculator.isOdd(number));
     }
+
     @Test
-    public void isOddTest3 () {
+    public void isOddTest3() {
         Calculator calculator = new Calculator();
         int number = 0;
         boolean expRes = false;

@@ -1,4 +1,5 @@
 package com.yuliiakulyk.app.homework.lesson4;
+
 import static java.lang.System.out;
 
 import java.math.BigDecimal;
@@ -14,33 +15,37 @@ import java.util.Date;
  * Created by 123 on 15.10.2016.
  */
 public class MathProblems {
-    public double getInterestSum (double intRate, double sumOnAccount) {
+    public double getInterestSum(double intRate, double sumOnAccount) {
         double InterestSum = intRate / 100 * sumOnAccount;
-        out.println("Having $" + sumOnAccount + " deposited with " + intRate + "% yearly interest rate, you will earn $" + InterestSum +" a year.");
-        return InterestSum; // The method calculates how much interest in $ per year you receive at a given interest rate and sum on account
+        out.println("Having $" + sumOnAccount + " deposited with " + intRate + "% yearly interest rate, you will earn $" + InterestSum + " a year.");
+        return InterestSum;
     }
-    public double compositeToSimpleInterest (double compositeMonthlyInterest) {
-        double simpleYearlyInterest = (Math.pow(1 + compositeMonthlyInterest / 100, 12)-1)*100;
+
+    public double compositeToSimpleInterest(double compositeMonthlyInterest) {
+        double simpleYearlyInterest = (Math.pow(1 + compositeMonthlyInterest / 100, 12) - 1) * 100;
         out.println("Composite monthly interest rate of " + compositeMonthlyInterest + "% is equal to " + simpleYearlyInterest + "% of simple yearly rate");
         return simpleYearlyInterest;
     }
-    public int multiplyNumbers (ArrayList<Integer> numbers) {
+
+    public int multiplyNumbers(ArrayList<Integer> numbers) {
         int productOfNumbers = 1;
-        for (int i=0; i<numbers.size(); i++) {
+        for (int i = 0; i < numbers.size(); i++) {
             productOfNumbers = productOfNumbers * numbers.get(i);
         }
         out.println("Product of the numbers is " + productOfNumbers);
         return productOfNumbers;
     }
-    public int addNumbers (ArrayList<Integer> numbers) {
+
+    public int addNumbers(ArrayList<Integer> numbers) {
         int sumOfNumbers = 0;
-        for (int i=0; i<numbers.size(); i++) {
+        for (int i = 0; i < numbers.size(); i++) {
             sumOfNumbers = sumOfNumbers + numbers.get(i);
         }
         out.println("Sum of the numbers is " + sumOfNumbers);
         return sumOfNumbers;
     }
-    public int sumNProgressionElements (int firstElement, int step, int numberOfElements) {
+
+    public int sumNProgressionElements(int firstElement, int step, int numberOfElements) {
         // int sum = (firstElement * 2 + (numberOfElements - 1) * step) / 2 * numberOfElements;
         int sum;
         if (numberOfElements > 0) {
@@ -54,7 +59,8 @@ public class MathProblems {
         out.println("Sum of " + numberOfElements + " elements of linear regression where 1st element = " + firstElement + ", step = " + step + " is " + sum);
         return sum;
     }
-    public boolean isEven (int number) {
+
+    public boolean isEven(int number) {
         boolean evenOrNot = false;
         if (number % 2 == 0) {
             evenOrNot = true;
@@ -62,7 +68,8 @@ public class MathProblems {
         out.println(number + " is even: " + evenOrNot);
         return evenOrNot;
     }
-    public boolean areDividedByEachOther (int number1, int number2) {
+
+    public boolean areDividedByEachOther(int number1, int number2) {
         boolean isDivided = false;
         int max;
         int min;
@@ -83,52 +90,35 @@ public class MathProblems {
         }
         return isDivided;
     }
-    public double getTravelTime (double distance, double speed) {
+
+    public double getTravelTime(double distance, double speed) {
         double travelTime = distance / speed;
         out.println("Riding " + distance + " km takes " + travelTime + " hours at speed " + speed + " km/h.");
         return travelTime;
     }
-    public String getQuadraticEquationRoot (int a, int b, int c) {
+
+    public String getQuadraticEquationRoot(int a, int b, int c) {
         double D = Math.pow(b, 2) - (4 * a * c);
         out.println("D = " + D);
         String x = "none";
         if (D >= 0) {
-            double x1 = (- b + Math.sqrt(D)) / (2 * a);
+            double x1 = (-b + Math.sqrt(D)) / (2 * a);
             x1 = new BigDecimal(x1).setScale(2, RoundingMode.HALF_UP).doubleValue();
             x = Double.toString(x1);
         }
         out.println("Root of the equation is: " + x);
         return x;
     }
-    public String numberBinaryNotation (int number){
+
+    public String numberBinaryNotation(int number) {
         String binaryNotation = Integer.toString(number, 2);
         out.println(number + " = " + binaryNotation);
         return binaryNotation;
     }
-    public String number16Notation (int number){
+
+    public String number16Notation(int number) {
         String Notation16 = Integer.toString(number, 16);
         out.println(number + " = " + Notation16);
         return Notation16;
     }
-    /* public String dayOfWeek (String dateString) {
-        SimpleDateFormat formatter = new SimpleDateFormat("dd.mm.yyyy");
-        Date date;
-         try {
-            date = formatter.parse(dateString);
-        }
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(date);
-        int day1 = calendar.get(Calendar.DAY_OF_WEEK);
-        String day = "";
-        ArrayList<String> daysOfWeek = new ArrayList<String> (Arrays.asList("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"));
-        for (int i = 0; i < 7; i++) {
-            if (day1 == i) {
-                day = daysOfWeek.get(i);
-            }
-        }
-        out.println(date + " is " + day + ".");
-        return day;
-    }
-    */
-
 }

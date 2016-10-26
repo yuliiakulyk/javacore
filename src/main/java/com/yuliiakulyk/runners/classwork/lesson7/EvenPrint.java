@@ -8,7 +8,7 @@ import static java.lang.System.out;
 public class EvenPrint {
     public static void main(String[] args) {
         int quantity = 0;
-        for (int i=0; i <= 20; i += 2) {
+        for (int i = 0; i <= 20; i += 2) {
             quantity++;
             out.println(i);
         }

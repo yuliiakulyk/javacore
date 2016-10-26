@@ -8,7 +8,7 @@ import org.junit.Test;
  */
 public class NarrowingCastingTest {
     @Test
-    public void cast () {
+    public void cast() {
         NarrowingCasting casting = new NarrowingCasting();
         float float1 = 17.99f;
         int expRes = 17;

@@ -27,14 +27,15 @@ public class BiologyCalcDataDrivenTest {
     @Test
     @FileParameters(value = "src/test/resources/BiologyCalcIdealWeight.csv",
             mapper = CsvWithHeaderMapper.class)
-    public void getIdealWeightTest (int height, String gender, double expOut) {
+    public void getIdealWeightTest(int height, String gender, double expOut) {
         //BiologyCalc biologyCalc = new BiologyCalc();
         Assert.assertEquals(expOut, biologyCalc.getIdealWeight(height, gender), 0.001);
     }
+
     @Test
     @FileParameters(value = "src/test/resources/BiologyCalcWaterNorm.csv",
             mapper = CsvWithHeaderMapper.class)
-    public void getWaterNormTest (String gender, double weight, double expOut) {
+    public void getWaterNormTest(String gender, double weight, double expOut) {
         // BiologyCalc biologyCalc = new BiologyCalc();
         Assert.assertEquals(expOut, biologyCalc.getWaterNorm(gender, weight), 0.01);
     }
