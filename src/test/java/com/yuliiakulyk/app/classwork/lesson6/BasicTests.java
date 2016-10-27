@@ -11,8 +11,8 @@ import java.util.Arrays;
  * Created by 123 on 19.10.2016.
  */
 public class BasicTests {
-    private static final String INPUT_DATA = "C:/Users/123/Documents/javacore/src/test/java/com/yuliiakulyk/app/classwork/lesson6/input.txt";
-    private static final String EXPECTED_RESULTS = "C:/Users/123/Documents/javacore/src/test/java/com/yuliiakulyk/app/classwork/lesson6/expected.txt";
+    private static final String INPUT_DATA = "src/test/java/com/yuliiakulyk/app/classwork/lesson6/input.txt";
+    private static final String EXPECTED_RESULTS = "src/test/java/com/yuliiakulyk/app/classwork/lesson6/expected.txt";
     private static int[] inputData = null;
     private static int[] expectedResults = null;
 
