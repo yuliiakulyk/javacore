@@ -1,0 +1,9 @@
+min, max, isEven
+3,9,true
+-10,10,true
+3,9,false
+-10,10,false
+10,10,true
+10,10,false
+-10,0,true
+-10,0,false

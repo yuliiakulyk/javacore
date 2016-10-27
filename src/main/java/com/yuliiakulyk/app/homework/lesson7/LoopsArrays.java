@@ -13,8 +13,8 @@ public class LoopsArrays {
         int minOddElement = 0;
         int minEvenElement = 0;
         for (int i = max; i >= min; i--) {
-            oddElements += i % 2; // number of odd elements between min and max
-            if (i % 2 == 1) {
+            oddElements += Math.abs(i % 2); // number of odd elements between min and max
+            if (Math.abs(i % 2) == 1) {
                 minOddElement = i; // get the smallest odd element in the range by the end of cycle
             } else {
                 minEvenElement = i; // get the smallest even element in the range by the end of cycle
