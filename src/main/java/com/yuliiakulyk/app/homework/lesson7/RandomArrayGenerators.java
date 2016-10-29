@@ -10,12 +10,11 @@ import static java.lang.System.out;
 public class RandomArrayGenerators {
     public int[] random1DimensionArray(int elements, int min, int max) {
         int[] array = new int[elements];
-        double[] arrayRandoms = new double[elements];
         for (int i = 0; i < array.length; i++) {
             if (min < 0) {
-                array[i] = (int) (min + arrayRandoms[i] * (max - min));
+                array[i] = (int) (min + Math.random() * (max - min));
             } else {
-                array[i] = (int) (min + arrayRandoms[i] * (max - min + 1));
+                array[i] = (int) (min + Math.random() * (max - min + 1));
             }
         }
         out.println();

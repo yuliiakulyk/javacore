@@ -28,64 +28,65 @@ public class  LoopsArraysRunner {
             out.println("7 - add int numbers.");
             out.println("8 - exit.");
             int problemNumber = scanner.nextInt();
-            if (problemNumber == 1) {
-                int min = 2;
-                int max = 20;
-                int[] array = loopsArrays.getEvenOddArrayFromTo(min, max, true);
-                printArrayOneLine(array);
-                printArraySeparateLines(array);
-            } else if (problemNumber == 2) {
-                int min = 1;
-                int max = 99;
-                int[] array = loopsArrays.getEvenOddArrayFromTo(min, max, false);
-                printArrayOneLine(array);
-                printArrayOneLineReverse(array);
-            } else if (problemNumber == 3) {
-                int elements = 15;
-                int min = 0;
-                int max = 9;
-                int[] array = randomArrayGenerators.random1DimensionArray(elements, min, max);
-                printArrayOneLine(array);
-                out.println("Number of even values is " + loopsArrays.evenInArray(array) + ".");
-            } else if (problemNumber == 4) {
-                int elements = 15;
-                int min = 0;
-                int max = 999;
-                int array[] = randomArrayGenerators.random1DimensionArray(elements, min, max);
-                printArrayOneLine(array);
-                out.println("min = " + loopsArrays.arrayMin(array) + ", max = " + loopsArrays.arrayMax(array) + ".");
-            } else if (problemNumber == 5) {
-                int elements1 = 8;
-                int elements2 = 5;
-                int min = 10;
-                int max = 99;
-                int array[][] = randomArrayGenerators.random2DimensionArray(elements1, elements2, min, max);
-                print2DimArray(array);
-            } else if (problemNumber == 6) {
-                int elements1 = 8;
-                int elements2 = 5;
-                int min = 1;
-                int max = 999;
-                int array[][] = randomArrayGenerators.random2DimensionArray(elements1, elements2, min, max);
-                print2DimArrayRightAligned(array);
-            } else if (problemNumber == 7) {
-                int sum = 0;
-                String input = "";
-                out.println("Type 'exit' to stop entering numbers to add.");
-                while (input != "exit") {
-                    out.println("Enter a number to add: ");
-                    input = scanner.next();
-                    if (input.equals("exit")) {
-                        break;
+            switch (problemNumber) {
+                case 1: int min = 2;
+                    int max = 20;
+                    int[] array = loopsArrays.getEvenOddArrayFromTo(min, max, true);
+                    printArrayOneLine(array);
+                    printArraySeparateLines(array);
+                    break;
+                case 2: min = 1;
+                    max = 99;
+                    array = loopsArrays.getEvenOddArrayFromTo(min, max, false);
+                    printArrayOneLine(array);
+                    printArrayOneLineReverse(array);
+                    break;
+                case 3: int elements = 15;
+                    min = 0;
+                    max = 9;
+                    array = randomArrayGenerators.random1DimensionArray(elements, min, max);
+                    printArrayOneLine(array);
+                    out.println("Number of even values is " + loopsArrays.evenInArray(array) + ".");
+                    break;
+                case 4: elements = 15;
+                    min = 0;
+                    max = 999;
+                    array = randomArrayGenerators.random1DimensionArray(elements, min, max);
+                    printArrayOneLine(array);
+                    out.println("min = " + loopsArrays.arrayMin(array) + ", max = " + loopsArrays.arrayMax(array) + ".");
+                    break;
+                case 5: int elements1 = 8;
+                    int elements2 = 5;
+                    min = 10;
+                    max = 99;
+                    int [][] array2Dim = randomArrayGenerators.random2DimensionArray(elements1, elements2, min, max);
+                    print2DimArray(array2Dim);
+                    break;
+                case 6: elements1 = 8;
+                    elements2 = 5;
+                    min = 1;
+                    max = 999;
+                    array2Dim = randomArrayGenerators.random2DimensionArray(elements1, elements2, min, max);
+                    print2DimArrayRightAligned(array2Dim);
+                    break;
+                case 7: int sum = 0;
+                    String input = "";
+                    out.println("Type 'exit' to stop entering numbers to add.");
+                    while (input != "exit") {
+                        out.println("Enter a number to add: ");
+                        input = scanner.next();
+                        if (input.equals("exit")) {
+                            break;
+                        }
+                        sum += Integer.parseInt(input);
                     }
-                    sum += Integer.parseInt(input);
-                }
-                out.println("Sum = " + sum);
-            } else if (problemNumber == 8) {
-                doAgain = false;
-            } else {
-                out.println("There is no such an option. Please, try again");
+                    out.println("Sum = " + sum);
+                    break;
+                case 8: doAgain = false;
+                    break;
+                default: out.println("There is no such an option. Please, try again");
             }
+
         } while (doAgain);
     }
 }
