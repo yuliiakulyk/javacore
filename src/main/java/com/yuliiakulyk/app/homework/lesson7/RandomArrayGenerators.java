@@ -13,7 +13,6 @@ public class RandomArrayGenerators {
         for (int i = 0; i < array.length; i++) {
             array[i] = (int) (min + Math.round(Math.random() * (max - min)));
         }
-        out.println();
         return array;
     }
 
