@@ -70,4 +70,15 @@ public class LoopsArrays {
         int max = array[array.length - 1];
         return max;
     }
+    public int arrayMax2Dim(int[][] array) {
+        int[] maxArray = new int[array.length];
+        for (int i = 0; i < array.length; i++) {
+            Arrays.sort(array[i]);
+            maxArray[i] = array[i][array[i].length - 1];
+        }
+        Arrays.sort(maxArray);
+        int max = maxArray[maxArray.length - 1];
+        return max;
+    }
+
 }

@@ -1,10 +1,12 @@
 package com.yuliiakulyk.runners.homework.lesson9;
 
+import com.yuliiakulyk.app.homework.lesson7.LoopsArrays;
 import com.yuliiakulyk.app.homework.lesson7.RandomArrayGenerators;
 import com.yuliiakulyk.app.homework.lesson9.ArraySortAscDesc;
 
 import java.util.Scanner;
 
+import static com.yuliiakulyk.runners.utils.Printers.print2DimArrayRightAligned;
 import static com.yuliiakulyk.runners.utils.Printers.printArrayOneLine;
 import static java.lang.System.out;
 
@@ -17,12 +19,14 @@ public class ArraySortAscDescRunner {
         boolean doAgain = true;
         RandomArrayGenerators randomArrayGenerators = new RandomArrayGenerators();
         ArraySortAscDesc arraySortAscDesc = new ArraySortAscDesc();
+        LoopsArrays loopsArrays = new LoopsArrays();
         do {
             out.println("Enter number of a problem to solve:");
             out.println("1 - apply ascending bubble sorting to an array.");
             out.println("2 - apply descending bubble sorting to an array.");
             out.println("3 - apply ascending selection sorting to an array.");
             out.println("4 - apply descending selection sorting to an array.");
+            out.println("5 - create array [5][8] of numbers [-99;99], get its maximum number.");
             out.println("0 - exit.");
             String problemNumber = scanner.next();
             switch (problemNumber) {
@@ -57,6 +61,10 @@ public class ArraySortAscDescRunner {
                     int[] arrayDescSelection = arraySortAscDesc.sortArrayDescSelection(array);
                     out.print("Descending selection: ");
                     printArrayOneLine(arrayDescSelection);
+                    break;
+                case "5": int[][] array2Dim = randomArrayGenerators.random2DimensionArray(8, 5, -99, 99);
+                    print2DimArrayRightAligned(array2Dim);
+                    out.println("Array maximum is " + loopsArrays.arrayMax2Dim(array2Dim));
                     break;
                 case "0":
                     doAgain = false;
