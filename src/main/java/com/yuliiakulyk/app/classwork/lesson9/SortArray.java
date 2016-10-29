@@ -1,4 +1,4 @@
-package com.yuliiakulyk.app.classwork.lesson8;
+package com.yuliiakulyk.app.classwork.lesson9;
 
 import static com.yuliiakulyk.runners.utils.Printers.printArrayOneLine;
 import static java.lang.System.out;
