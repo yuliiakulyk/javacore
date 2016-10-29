@@ -14,12 +14,19 @@ public class ArraySortAscDescRunner {
         RandomArrayGenerators randomArrayGenerators = new RandomArrayGenerators();
         ArraySortAscDesc arraySortAscDesc = new ArraySortAscDesc();
         int[] array = randomArrayGenerators.random1DimensionArray(20, -100, 300);
+        out.print("Initial array:        ");
         printArrayOneLine(array);
-        int[] arrayAsc = arraySortAscDesc.sortArrayAsc(array);
-        out.print("Ascending: ");
-        printArrayOneLine(arrayAsc);
-        int[] arrayDesc = arraySortAscDesc.sortArrayDesc(array);
-        out.print("Descending: ");
-        printArrayOneLine(arrayDesc);
+        int[] arrayAscBubble = arraySortAscDesc.sortArrayAscBubble(array);
+        out.print("Ascending bubble:     ");
+        printArrayOneLine(arrayAscBubble);
+        int[] arrayAscSelection = arraySortAscDesc.sortArrayAscSelection(array);
+        out.print("Ascending selection:  ");
+        printArrayOneLine(arrayAscSelection);
+        int[] arrayDescBubble = arraySortAscDesc.sortArrayDescBubble(array);
+        out.print("Descending bubble:    ");
+        printArrayOneLine(arrayDescBubble);
+        int[] arrayDescSelection = arraySortAscDesc.sortArrayDescSelection(array);
+        out.print("Descending selection: ");
+        printArrayOneLine(arrayDescSelection);
     }
 }

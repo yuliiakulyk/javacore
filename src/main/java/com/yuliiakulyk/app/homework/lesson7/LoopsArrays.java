@@ -54,6 +54,17 @@ public class LoopsArrays {
         return min;
     }
 
+    public int arrayIndexOf (int[] array, int number) {
+        int index = -1;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == number) {
+                index = i;
+                break;
+            }
+        }
+        return index;
+    }
+
     public int arrayMax(int[] array) {
         Arrays.sort(array);
         int max = array[array.length - 1];
