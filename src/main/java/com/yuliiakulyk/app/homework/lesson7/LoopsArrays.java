@@ -54,7 +54,7 @@ public class LoopsArrays {
         return min;
     }
 
-    public int arrayIndexOf (int[] array, int number) {
+    public int arrayIndexOf(int[] array, int number) {
         int index = -1;
         for (int i = 0; i < array.length; i++) {
             if (array[i] == number) {
@@ -70,6 +70,7 @@ public class LoopsArrays {
         int max = array[array.length - 1];
         return max;
     }
+
     public int arrayMax2Dim(int[][] array) {
         int[] maxArray = new int[array.length];
         for (int i = 0; i < array.length; i++) {
@@ -79,6 +80,24 @@ public class LoopsArrays {
         Arrays.sort(maxArray);
         int max = maxArray[maxArray.length - 1];
         return max;
+    }
+
+    public int equalPositiveElementsIn2Arrays(int[] array1, int[] array2) {
+        int duplicates = 0;
+        int[] a1 = new int[array1.length];
+        System.arraycopy(array1, 0, a1, 0, array1.length);
+        int[] a2 = new int[array2.length];
+        System.arraycopy(array2, 0, a2, 0, array2.length);
+        for (int i = 0; i < a1.length; i++) {
+            for (int j = 0; j < a2.length; j++) {
+                if (a1[i] == a2[j]) {
+                    duplicates++;
+                    a2[j] = -1;
+                }
+            }
+
+        }
+        return duplicates;
     }
 
 }

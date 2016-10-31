@@ -1,7 +1,12 @@
 package com.yuliiakulyk.app.homework.lesson7;
 
+import com.sun.deploy.util.ArrayUtil;
+
 import static com.yuliiakulyk.runners.utils.Printers.printArrayOneLine;
 import static java.lang.System.out;
+
+import java.util.Arrays;
+import java.util.HashSet;
 
 
 /**
@@ -23,4 +28,25 @@ public class RandomArrayGenerators {
         }
         return array;
     }
+
+    public int[][] randomCasesMultiplicationTable(int quantity) {
+        int[][] cases = new int[quantity][2];
+        cases[0] = random1DimensionArray(2, 2, 9);
+        boolean isUnique;
+        LoopsArrays loopsArrays = new LoopsArrays();
+        for (int i = 1; i < cases.length; i++) {
+            do {
+                isUnique = true;
+                cases[i] = random1DimensionArray(2, 2, 9);
+                for (int j = 0; j < i; j++) {
+                    int equal = loopsArrays.equalPositiveElementsIn2Arrays(cases[i], cases[j]);
+                    if (equal == 2) {
+                        isUnique = false;
+                    }
+                }
+            } while (isUnique == false);
+        }
+        return cases;
+    }
+
 }

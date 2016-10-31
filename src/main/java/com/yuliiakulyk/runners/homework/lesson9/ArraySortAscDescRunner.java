@@ -27,6 +27,7 @@ public class ArraySortAscDescRunner {
             out.println("3 - apply ascending selection sorting to an array.");
             out.println("4 - apply descending selection sorting to an array.");
             out.println("5 - create array [5][8] of numbers [-99;99], get its maximum number.");
+            out.println("6 - get 15 cases from multiplication table.");
             out.println("0 - exit.");
             String problemNumber = scanner.next();
             switch (problemNumber) {
@@ -65,6 +66,12 @@ public class ArraySortAscDescRunner {
                 case "5": int[][] array2Dim = randomArrayGenerators.random2DimensionArray(8, 5, -99, 99);
                     print2DimArrayRightAligned(array2Dim);
                     out.println("Array maximum is " + loopsArrays.arrayMax2Dim(array2Dim));
+                    break;
+                case "6": int[][] cases;
+                    cases = randomArrayGenerators.randomCasesMultiplicationTable(15);
+                    for (int i = 0; i < cases.length; i++) {
+                        out.println(cases[i][0] + " * " + cases[i][1] + " = " + cases[i][0]*cases[i][1]);
+                    }
                     break;
                 case "0":
                     doAgain = false;
