@@ -7,8 +7,7 @@ import static java.lang.System.out;
  * Created by Yuliia Kulyk on 29.10.2016.
  */
 public class SortArray {
-    public static void main(String[] args) {
-        int[] array = {5, 4, 2, 1, 3, 888, 0, 6, 5, 0, 10, 13, -3, -100};
+    public int[] sortArrayBubble(int[] array) {
         out.print("Original array: ");
         printArrayOneLine(array);
         int exchange;
@@ -26,5 +25,6 @@ public class SortArray {
         } while (exchange > 0);
         out.print("  Sorted array: ");
         printArrayOneLine(array);
+        return array;
     }
 }
