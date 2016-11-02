@@ -74,5 +74,30 @@ public class LoopsArraysDataDrivenTest {
         array[6] = a7;
         Assert.assertEquals(expRes, loopsArrays.arrayMax(array));
     }
+    @Test
+    @FileParameters(value = "src/test/resources/LoopsArraysIndexOf.csv", mapper = CsvWithHeaderMapper.class)
+    public void arrayIndexOfTest (int a1, int a2, int a3, int a4, int a5, int a6, int a7, int number, int expRes) {
+        int[] array = new int[7];
+        array[0] = a1;
+        array[1] = a2;
+        array[2] = a3;
+        array[3] = a4;
+        array[4] = a5;
+        array[5] = a6;
+        array[6] = a7;
+        Assert.assertEquals(expRes, loopsArrays.arrayIndexOf(array, number));
+    }
 
+    @Test
+    @FileParameters(value = "src/test/resources/LoopsArraysMax2DimArray.csv", mapper = CsvWithHeaderMapper.class)
+    public void arrayMax2DimTest (int a00, int a01, int a10, int a11, int a20, int a21, int expRes) {
+        int[][] array = new int[3][2];
+        array[0][0] = a00;
+        array[0][1] = a01;
+        array[1][0] = a10;
+        array[1][1] = a11;
+        array[2][0] = a20;
+        array[2][1] = a21;
+        Assert.assertEquals(expRes, loopsArrays.arrayMax2Dim(array));
+    }
 }

@@ -10,7 +10,7 @@ import static com.yuliiakulyk.runners.utils.Printers.printArrayOneLine;
 public class RandomArrayGeneratorsRunner {
     public static void main(String[] args) {
         RandomArrayGenerators randomArrayGenerators = new RandomArrayGenerators();
-        int[] array = randomArrayGenerators.random1DimensionArray(15,0,9);
+        int[] array = randomArrayGenerators.random1DimensionArray(6,0,10);
         printArrayOneLine(array);
     }
 }

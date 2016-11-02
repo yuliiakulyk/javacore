@@ -1,5 +1,6 @@
 package com.yuliiakulyk.app.homework.lesson7;
 
+import com.yuliiakulyk.app.classwork.lesson5.Calculator;
 import junitparams.FileParameters;
 import junitparams.JUnitParamsRunner;
 import junitparams.mappers.CsvWithHeaderMapper;
@@ -7,6 +8,9 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import static com.yuliiakulyk.runners.utils.Printers.print2DimArray;
+import static com.yuliiakulyk.runners.utils.Printers.printArrayOneLine;
 
 /**
  * Created by Yuliia Kulyk on 27.10.2016.
@@ -45,4 +49,34 @@ public class RandomArrayGeneratorsTest {
         }
         Assert.assertEquals(false, isOutOfRange);
     }
+    @Test
+    @FileParameters(value = "src/test/resources/MultiplicationTable.csv", mapper = CsvWithHeaderMapper.class)
+    public void randomCasesMultiplicationTableTest (int numberOfCases) {
+        int[] a = new int [numberOfCases * 2];
+        int[][] cases = randomArrayGenerators.randomCasesMultiplicationTable(numberOfCases);
+        print2DimArray(cases);
+        for (int i = 0; i < cases.length; i++) {
+            a[2 * i] = 10 * cases[i][0] + cases[i][1];
+            a[2 * i + 1] = 10 * cases[i][1] + cases[i][0];
+        }
+        printArrayOneLine(a);
+        boolean hasDuplicates = false;
+        int numberOfDuplicates = 0;
+        for (int i = 0; i < cases.length; i++) {
+            numberOfDuplicates = 0;
+            for (int j = 0; j < a.length; j++) {
+                if (10* cases[i][0] + cases[i][1] == a[j] ) {
+                    numberOfDuplicates++;
+                }
+            }
+            if (cases[i][0] == cases[i][1]) {
+                numberOfDuplicates-=2;
+            }
+            if (numberOfDuplicates > 1) {
+                hasDuplicates = true;
+            }
+        }
+        Assert.assertEquals(false, hasDuplicates);
+    }
+
 }
