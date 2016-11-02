@@ -1,6 +1,5 @@
 package com.yuliiakulyk.app.homework.lesson7;
 
-import com.yuliiakulyk.app.classwork.lesson5.Calculator;
 import junitparams.FileParameters;
 import junitparams.JUnitParamsRunner;
 import junitparams.mappers.CsvWithHeaderMapper;
