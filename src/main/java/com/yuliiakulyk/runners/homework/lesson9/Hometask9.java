@@ -13,7 +13,7 @@ import static java.lang.System.out;
 /**
  * Created by Yuliia Kulyk on 29.10.2016.
  */
-public class ArraySortAscDescRunner {
+public class Hometask9 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean doAgain = true;

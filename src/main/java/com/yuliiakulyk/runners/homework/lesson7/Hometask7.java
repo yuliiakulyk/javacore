@@ -11,7 +11,7 @@ import com.yuliiakulyk.app.homework.lesson7.RandomArrayGenerators;
 /**
  * Created by Yuliia Kulyk on 22.10.2016.
  */
-public class  LoopsArraysRunner {
+public class Hometask7 {
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
         LoopsArrays loopsArrays = new LoopsArrays();

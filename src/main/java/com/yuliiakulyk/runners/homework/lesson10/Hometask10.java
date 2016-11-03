@@ -9,7 +9,7 @@ import static java.lang.System.out;
 /**
  * Created by Yuliia Kulyk on 02.11.2016.
  */
-public class PalindromeRunner {
+public class Hometask10 {
     public static void main(String[] args) {
         Palindrome palindrome = new Palindrome();
         Scanner scanner = new Scanner(System.in);

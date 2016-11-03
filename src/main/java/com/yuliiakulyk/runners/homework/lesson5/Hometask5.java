@@ -10,7 +10,7 @@ import static java.lang.System.out;
 /**
  * Created by 123 on 15.10.2016.
  */
-public class Lesson5Runner {
+public class Hometask5 {
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
         boolean doAgain = true;
