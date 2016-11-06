@@ -34,7 +34,6 @@ public class CharAndSortArrayTest {
         sortArray = new SortArray();
         randomArrayGenerators = new RandomArrayGenerators();
         arraySortAscDesc = new ArraySortAscDesc();
-
     }
 
     @Test
@@ -111,21 +110,18 @@ public class CharAndSortArrayTest {
         Assert.assertEquals(true, isEqual);
     }
 
-    @Ignore
     @Test
     public void sortArrayDescSelectionTest() {
         int[] array = randomArrayGenerators.random1DimensionArray(100, -5, 40);
-        int[] arrayInput = new int[array.length];
-        System.arraycopy(array, 0, arrayInput, 0, array.length);
-        int[] testArray = arraySortAscDesc.sortArrayDescSelection(arrayInput);
+        int[] testArray = arraySortAscDesc.sortArrayDescSelection(array);
         Arrays.sort(array);
-        int[] array1 = new int[array.length];
-        for (int i = 0, j = array.length - 1; i < array.length; i++, j--) {
-            array1[i] = array[j];
+        int[] arrayDesc = new int[array.length];
+        for (int i = 0, j = arrayDesc.length - 1; i < arrayDesc.length; i++, j--) {
+            arrayDesc[i] = array[j];
         }
         boolean isEqual = true;
-        for (int i = 0; i < array1.length; i++) {
-            if (array1[i] != testArray[i]) {
+        for (int i = 0; i < arrayDesc.length; i++) {
+            if (arrayDesc[i] != testArray[i]) {
                 isEqual = false;
             }
         }

@@ -48,7 +48,8 @@ public class LoopsArrays {
         return even;
     }
 
-    public int arrayMin(int[] array) {
+    public int arrayMin(int[] arrayInput) {
+        int[] array = arrayInput.clone();
         Arrays.sort(array);
         int min = array[0];
         return min;
@@ -58,14 +59,16 @@ public class LoopsArrays {
         int index = -1;
         for (int i = 0; i < array.length; i++) {
             if (array[i] == number) {
-                index = i;
-                break;
+                //index = i;
+                //break;
+                return i;
             }
         }
         return index;
     }
 
-    public int arrayMax(int[] array) {
+    public int arrayMax(int[] arrayInput) {
+        int[] array = arrayInput.clone();
         Arrays.sort(array);
         int max = array[array.length - 1];
         return max;

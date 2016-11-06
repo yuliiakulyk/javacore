@@ -4,11 +4,14 @@ import com.yuliiakulyk.app.homework.lesson7.LoopsArrays;
 
 import java.util.Arrays;
 
+import static java.lang.System.out;
+
 /**
  * Created by Yuliia Kulyk on 29.10.2016.
  */
 public class ArraySortAscDesc {
-    public int[] sortArrayAscBubble(int[] array) {
+    public int[] sortArrayAscBubble(int[] initialArray) {
+        int[] array = initialArray.clone();
         boolean exchange;
         do {
             exchange = false;
@@ -22,7 +25,8 @@ public class ArraySortAscDesc {
         return array;
     }
 
-    public int[] sortArrayDescBubble(int[] array) {
+    public int[] sortArrayDescBubble(int[] initialArray) {
+        int[] array = initialArray.clone();
         boolean exchange;
         do {
             exchange = false;
@@ -43,32 +47,39 @@ public class ArraySortAscDesc {
         array[j] = k;
         return array;
     }
-    public int[] sortArrayAscSelection (int[] array) {
+
+    public int[] sortArrayAscSelection(int[] initialArray) {
         LoopsArrays loopsArrays = new LoopsArrays();
+        int[] array = initialArray.clone();
         int j;
         int min;
-        int minIndex;
+        int minIndexRest;
+        int minIndexArray;
         for (int i = 0; i < array.length - 1; i++) {
             int[] restOfArray = Arrays.copyOfRange(array, i + 1, array.length);
             min = loopsArrays.arrayMin(restOfArray);
-            minIndex = loopsArrays.arrayIndexOf(array, min);
+            minIndexRest = loopsArrays.arrayIndexOf(restOfArray, min);
+            minIndexArray = i + minIndexRest + 1;
             if (array[i] > min) {
-                array = exchangeArrayElements(array, i, minIndex);
+                array = exchangeArrayElements(array, i, minIndexArray);
             }
         }
         return array;
     }
-    public int[] sortArrayDescSelection (int[] array) {
+
+    public int[] sortArrayDescSelection(int[] initialArray) {
         LoopsArrays loopsArrays = new LoopsArrays();
-        int j;
+        int[] array = initialArray.clone();
         int max;
-        int maxIndex;
+        int maxIndexRest;
+        int maxIndexArray;
         for (int i = 0; i < array.length - 1; i++) {
             int[] restOfArray = Arrays.copyOfRange(array, i + 1, array.length);
             max = loopsArrays.arrayMax(restOfArray);
-            maxIndex = loopsArrays.arrayIndexOf(array, max);
+            maxIndexRest = loopsArrays.arrayIndexOf(restOfArray, max);
+            maxIndexArray = i + maxIndexRest + 1;
             if (array[i] < max) {
-                array = exchangeArrayElements(array, i, maxIndex);
+                array = exchangeArrayElements(array, i, maxIndexArray);
             }
         }
         return array;
