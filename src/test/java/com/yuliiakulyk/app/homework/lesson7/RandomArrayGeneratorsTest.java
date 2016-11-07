@@ -58,9 +58,8 @@ public class RandomArrayGeneratorsTest {
             a[2 * i] = 10 * cases[i][0] + cases[i][1];
             a[2 * i + 1] = 10 * cases[i][1] + cases[i][0];
         }
-        printArrayOneLine(a);
         boolean hasDuplicates = false;
-        int numberOfDuplicates = 0;
+        int numberOfDuplicates;
         for (int i = 0; i < cases.length; i++) {
             numberOfDuplicates = 0;
             for (int j = 0; j < a.length; j++) {
