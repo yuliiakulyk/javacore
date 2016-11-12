@@ -15,7 +15,7 @@ public class ArrayParserRunner {
         ArrayParser arrayParser = new ArrayParser();
         ArraySortAscDesc sort = new ArraySortAscDesc();
         out.println("Please enter numbers to sort separated by semicolon:");
-        int[] array = arrayParser.stringToArray(getKeyboardInput());
+        int[] array = arrayParser.stringToIntArray(getKeyboardInput());
         out.println("Choose direction to sort the array.");
         out.println("Enter \"up\" to sort from smaller to bigger.");
         out.println("Enter \"down\" to sort from bigger to smaller.");
@@ -29,5 +29,8 @@ public class ArrayParserRunner {
             default:
                 out.println("There is no such a sorting order.");
         }
+        String[] stringWithAlphabet = {"a", "hello", "A", "Z", "uuu", "e", "788"};
+        out.println(arrayParser.alphabetFromStringArray(stringWithAlphabet));
     }
+
 }
