@@ -1,4 +1,4 @@
-package com.yuliiakulyk.app.utils.convertors;
+package com.yuliiakulyk.runners.utils;
 
 import java.util.Scanner;
 

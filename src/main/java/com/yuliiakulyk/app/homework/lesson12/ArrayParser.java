@@ -4,8 +4,8 @@ package com.yuliiakulyk.app.homework.lesson12;
  * Created by Yuliia Kulyk on 12.11.2016.
  */
 public class ArrayParser {
-    public int[] stringToIntArray(String string) {
-        String[] stringArray = string.split(";");
+    public int[] stringToIntArray(String string, String separator) {
+        String[] stringArray = string.split(separator);
         int[] intArray = new int[stringArray.length];
         for (int i = 0; i < stringArray.length; i++) {
             intArray[i] = Integer.parseInt(stringArray[i]);

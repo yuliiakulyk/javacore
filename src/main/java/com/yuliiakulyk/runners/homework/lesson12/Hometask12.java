@@ -5,9 +5,7 @@ import com.yuliiakulyk.app.classwork.lesson12.Enigma;
 import com.yuliiakulyk.app.homework.lesson12.ArrayParser;
 import com.yuliiakulyk.app.homework.lesson9.ArraySortAscDesc;
 
-import java.util.Arrays;
-
-import static com.yuliiakulyk.app.utils.convertors.KeyboardInput.getKeyboardInput;
+import static com.yuliiakulyk.runners.utils.KeyboardInput.getKeyboardInput;
 import static java.lang.System.out;
 import static com.yuliiakulyk.runners.utils.Printers.*;
 
@@ -22,7 +20,7 @@ public class Hometask12 {
         do {
             out.println("Select the problem to solve");
             out.println("1 - Sort numbers from a string with separators");
-            out.println("2 - Extract alphabet letters from a string with separators");
+            out.println("2 - Extract alphabet letters from a string with semicolon separators");
             out.println("3 - Print a string separated by keyword split into lines");
             out.println("4 - Encode and decode your message using Enigma algorithm");
             out.println("5 - Encode and decode your message using Caesar algorithm");
@@ -30,7 +28,7 @@ public class Hometask12 {
             switch (getKeyboardInput()) {
                 case "1":
                     out.println("Please enter numbers to sort separated by semicolon:");
-                    int[] array = arrayParser.stringToIntArray(getKeyboardInput());
+                    int[] array = arrayParser.stringToIntArray(getKeyboardInput(), ";");
                     out.println("Choose direction to sort the array.");
                     out.println("Enter \"U\" to sort from smaller to bigger.");
                     out.println("Enter \"D\" to sort from bigger to smaller.");
