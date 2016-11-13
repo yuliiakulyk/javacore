@@ -1,5 +1,7 @@
 package com.yuliiakulyk.runners.homework.lesson12;
 
+import com.yuliiakulyk.app.classwork.lesson12.Caesar;
+import com.yuliiakulyk.app.classwork.lesson12.Enigma;
 import com.yuliiakulyk.app.homework.lesson12.ArrayParser;
 import com.yuliiakulyk.app.homework.lesson9.ArraySortAscDesc;
 
@@ -21,7 +23,9 @@ public class Hometask12 {
             out.println("Select the problem to solve");
             out.println("1 - Sort numbers from a string with separators");
             out.println("2 - Extract alphabet letters from a string with separators");
-            out.println("3 - Print a string separated by keyword splitted into lines");
+            out.println("3 - Print a string separated by keyword split into lines");
+            out.println("4 - Encode and decode your message using Enigma algorithm");
+            out.println("5 - Encode and decode your message using Caesar algorithm");
             out.println("0 - Exit");
             switch (getKeyboardInput()) {
                 case "1":
@@ -54,6 +58,20 @@ public class Hometask12 {
                     for (int i = 0; i < arrayParser.stringToStringArray(string, separator).length; i++) {
                         out.println(arrayParser.stringToStringArray(string, separator)[i].trim());
                     }
+                    break;
+                case "4":
+                    Enigma enigma = new Enigma();
+                    out.println("Enter your message.");
+                    String encodedString = enigma.encode(getKeyboardInput());
+                    out.println("Encoded message: " + encodedString);
+                    out.println("Decoded message: " + enigma.decode(encodedString));
+                    break;
+                case "5":
+                    Caesar caesar = new Caesar();
+                    out.println("Enter your message.");
+                    encodedString = caesar.encode(getKeyboardInput());
+                    out.println("Encoded message: " + encodedString);
+                    out.println("Decoded message: " + caesar.decode(encodedString));
                     break;
                 case "0":
                     doAgain = false;
