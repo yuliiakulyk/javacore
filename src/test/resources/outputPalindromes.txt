@@ -1,0 +1,8 @@
+hello is not a palindrome.
+world is not a palindrome.
+anna is a palindrome.
+ASCII stands for American Standard Code for Information Interchange. is not a palindrome.
+wow is a palindrome.
+qwewq is a palindrome.
+Computers can only understand numbers. is not a palindrome.
+Bob is a palindrome.
