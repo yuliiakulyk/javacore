@@ -57,8 +57,10 @@ public class Hometask13 {
                     break;
                 case "3":
                     array = consoleToStringArray("exit");
-                    fileWork.writeFileLines(array, "src/test/resources/consoleToFile.txt");
-                    out.println("Please see result in file src/test/resources/consoleToFile.txt");
+                    out.println("Please, enter a file name, excluding its format");
+                    String fileName = getKeyboardInput();
+                    fileWork.writeFileLines(array, "src/test/resources/" + fileName + ".txt");
+                    out.println("Please see result in file src/test/resources/" + fileName + ".txt");
                     break;
                 case "0":
                     doAgain = false;

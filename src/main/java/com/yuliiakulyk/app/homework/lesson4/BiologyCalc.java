@@ -11,8 +11,6 @@ public class BiologyCalc {
         double idealWeight;
         if (gender.equals("male")) {
             idealWeight =  (height - 100)*1.15;
-            //new BigDecimal ((height - 100)*1.15).setScale(, RoundingMode.HALF_UP).intValue();
-            //Math.round ((height - 100)*1.15);
         } else {
             idealWeight = (height - 110)*1.15;
         }
