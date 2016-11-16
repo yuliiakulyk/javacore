@@ -1,4 +1,4 @@
-package com.yuliiakulyk.app.classwork.lesson12;
+package com.yuliiakulyk.runners.classwork.lesson12;
 
 import static java.lang.System.out;
 
