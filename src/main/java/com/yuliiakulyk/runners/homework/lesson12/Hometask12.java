@@ -20,7 +20,7 @@ public class Hometask12 {
         do {
             out.println("Select the problem to solve");
             out.println("1 - Sort numbers from a string with separators");
-            out.println("2 - Extract alphabet letters from a string with semicolon separators");
+            out.println("2 - Extract alphabet letters from a string with comma separators");
             out.println("3 - Print a string separated by keyword split into lines");
             out.println("4 - Encode and decode your message using Enigma algorithm");
             out.println("5 - Encode and decode your message using Caesar algorithm");

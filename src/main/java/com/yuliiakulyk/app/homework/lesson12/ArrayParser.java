@@ -20,11 +20,13 @@ public class ArrayParser {
 
     public String alphabetFromStringArray (String[] stringArray) {
         StringBuilder builder = new StringBuilder("");
+        int j;
         for (int i = 0; i < stringArray.length; i++) {
-            int ascii = (int) stringArray[i].charAt(0);
-            if (stringArray[i].length() == 1 && (ascii >= 65 && ascii <= 90 || ascii >= 97 && ascii <= 122)) {
-                builder.append(stringArray[i]);
-                builder.append(" ");
+            for (j = 0; j < stringArray[i].length(); j++) {
+                int ascii = (int) stringArray[i].charAt(j);
+                if ((ascii >= 65 && ascii <= 90 || ascii >= 97 && ascii <= 122)) {
+                    builder.append(stringArray[i].charAt(j));
+                }
             }
         }
         return builder.toString();
