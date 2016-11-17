@@ -5,12 +5,12 @@ import static java.lang.System.out;
 /**
  * Created by Yuliia Kulyk on 09.11.2016.
  */
-public class CharsArrayToStringBuilder {
-    public static void main(String[] args) {
+public class CharsArrayToString {
+
+    public String charsArrayToString(char[] array) {
         StringBuilder builder = new StringBuilder();
-        char[] charArray = {'h', 'e', 'l', 'l', 'o'};
-        builder = builder.append(charArray);
+        builder = builder.append(array);
         String string = builder.toString();
-        out.println(string);
+        return string;
     }
 }

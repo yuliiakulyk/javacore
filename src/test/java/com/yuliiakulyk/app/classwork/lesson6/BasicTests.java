@@ -40,6 +40,7 @@ public class BasicTests {
         Assert.assertArrayEquals(expectedResults, inputData);
     }
 
+    @Ignore
     @Test(timeout = 1000)
     public void infinityTest() {
         while (true) ;
