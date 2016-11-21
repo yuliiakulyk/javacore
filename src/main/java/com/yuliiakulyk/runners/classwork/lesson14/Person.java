@@ -14,4 +14,8 @@ public class Person {
         return name;
     }
 
+    public String getResponse(String question) {
+        return question;
+    }
+
 }
