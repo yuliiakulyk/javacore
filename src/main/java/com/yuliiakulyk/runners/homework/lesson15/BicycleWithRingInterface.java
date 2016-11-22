@@ -1,4 +1,4 @@
-package com.yuliiakulyk.app.homework.lesson15;
+package com.yuliiakulyk.runners.homework.lesson15;
 
 /**
  * Created by Yuliia Kulyk on 21.11.2016.

@@ -1,4 +1,4 @@
-package com.yuliiakulyk.app.homework.lesson15;
+package com.yuliiakulyk.runners.homework.lesson15;
 
 import com.yuliiakulyk.app.homework.lesson7.RandomArrayGenerators;
 
