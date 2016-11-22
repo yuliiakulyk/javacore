@@ -1,4 +1,4 @@
-package com.yuliiakulyk.app.utils.convertors;
+package com.yuliiakulyk.app.utils;
 
 import java.io.*;
 import java.util.ArrayList;

@@ -1,7 +1,7 @@
 package com.yuliiakulyk.runners.homework.lesson13;
 
 import com.yuliiakulyk.app.classwork.lesson10.Palindrome;
-import com.yuliiakulyk.app.utils.convertors.FileWork;
+import com.yuliiakulyk.app.utils.FileWork;
 import com.yuliiakulyk.app.homework.lesson9.ArraySortAscDesc;
 import com.yuliiakulyk.app.homework.lesson12.ArrayParser;
 
