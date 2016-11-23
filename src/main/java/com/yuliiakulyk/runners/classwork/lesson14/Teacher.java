@@ -7,14 +7,13 @@ import static java.lang.System.out;
  */
 public class Teacher extends Person {
     private String university;
-    private String response;
 
     public Teacher(String name, String university) {
         super(name);
         this.university = university;
     }
 
-    public void printOnTable() {
-        out.println("Assume this is table)):" + response);
+    public String lessonFinished() {
+        return "Do not forget to do the homework!";
     }
 }
