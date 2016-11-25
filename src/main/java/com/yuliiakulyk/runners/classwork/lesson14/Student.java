@@ -19,6 +19,7 @@ public class Student extends Person {
         this.university = university;
     }
 
+    @Override
     public String getResponse(String question) {
         return "Ehhh, what was the question?";
     }

@@ -10,12 +10,10 @@ public class Person {
         this.name = name;
     }
 
-    public String getName() {
-        return name;
-    }
+    public String getName() {return name;}
 
     public String getResponse(String question) {
-        return question;
+        return "My answer is " + question;
     }
 
 }
