@@ -13,7 +13,7 @@ public enum Celebrities {
     HUGH_GRANT("Hugh Grant", 9, 9, 1960),
     MARC_ANTHONY("Marc Anthony", 16, 9, 1968),
     MEL_GIBSON("Mel Gibson", 3, 1, 1956),
-    ADRIANO_CELENTANO("Andiano Celentano", 6, 1, 1938),
+    ADRIANO_CELENTANO("Adriano Celentano", 6, 1, 1938),
     ASHTON_CUTCHER("Ashton Cutcher", 7, 2, 1978),
     LEONARDO_DICAPRIO("Leonardo DiCaprio", 11, 11, 1974),
     GERARD_BUTLER("Gerard Butler", 13, 11, 1969),
