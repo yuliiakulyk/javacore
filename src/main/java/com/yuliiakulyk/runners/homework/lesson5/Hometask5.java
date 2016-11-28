@@ -3,7 +3,9 @@ package com.yuliiakulyk.runners.homework.lesson5;
 import java.util.Scanner;
 
 import com.yuliiakulyk.app.classwork.lesson5.Calculator;
+import com.yuliiakulyk.runners.homework.lesson13.EnumHometask;
 
+import static com.yuliiakulyk.runners.utils.KeyboardInput.getKeyboardInput;
 import static java.lang.System.out;
 
 
@@ -14,50 +16,61 @@ public class Hometask5 {
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
         boolean doAgain = true;
+        EnumHometask task;
         do {
             out.println("Enter number of a problem to solve:");
-            out.println("1 - are a,b,c sides of a right-angled triangle?");
-            out.println("2 - calculate area of a circle with r radius");
-            out.println("3 - find out if a number is even or odd");
-            out.println("4 - find out which circle area is bigger");
-            out.println("5 - exit the program");
-            int problemNumber = scanner.nextInt();
-            if (problemNumber == 1) {
-                out.println("Enter length of 'a' side:");
-                double a = scanner.nextDouble();
-                out.println("Enter length of 'b' side:");
-                double b = scanner.nextDouble();
-                out.println("Enter length of 'c' side:");
-                double c = scanner.nextDouble();
-                if (Calculator.rightAngledTriangleCheck(a, b, c)) {
-                    out.println("a, b, c are sides of a right-angled triangle.");
-                } else {
-                    out.println("a, b, c are not sides of a right-angled triangle.");
+            out.println("A - are a,b,c sides of a right-angled triangle?");
+            out.println("B - calculate area of a circle with r radius");
+            out.println("C - find out if a number is even or odd");
+            out.println("D - find out which circle area is bigger");
+            out.println("E - exit the program");
+            try {
+                task = EnumHometask.valueOf(getKeyboardInput().toUpperCase());
+                switch (task) {
+                    case A:
+                        out.println("Enter length of 'a' side:");
+                        double a = scanner.nextDouble();
+                        out.println("Enter length of 'b' side:");
+                        double b = scanner.nextDouble();
+                        out.println("Enter length of 'c' side:");
+                        double c = scanner.nextDouble();
+                        if (Calculator.rightAngledTriangleCheck(a, b, c)) {
+                            out.println("a, b, c are sides of a right-angled triangle.");
+                        } else {
+                            out.println("a, b, c are not sides of a right-angled triangle.");
+                        }
+                        break;
+                    case B:
+                        out.println("Enter a circle radius:");
+                        double r = scanner.nextDouble();
+                        out.println("Circle area = " + Calculator.calculateCircleArea(r));
+                        break;
+                    case C:
+                        out.println("Enter a number:");
+                        int number = scanner.nextInt();
+                        if (Calculator.isOdd(number)) {
+                            out.println(number + " is odd.");
+                        } else {
+                            out.println(number + " is even.");
+                        }
+                        break;
+                    case D:
+                        out.println("Enter area1:");
+                        double area1 = scanner.nextDouble();
+                        System.out.println("Enter area2:");
+                        double area2 = scanner.nextDouble();
+                        Calculator.calculateBigger(area1, area2);
+                        break;
+                    case E:
+                        doAgain = false;
+                        out.println("Program is closed. Bye!");
+                        break;
+                    default:
+                        System.out.println("There is no such a task. Try again.");
                 }
-            } else if (problemNumber == 2) {
-                out.println("Enter a circle radius:");
-                double r = scanner.nextDouble();
-                out.println("Circle area = " + Calculator.calculateCircleArea(r));
-            } else if (problemNumber == 3) {
-                out.println("Enter a number:");
-                int number = scanner.nextInt();
-                if (Calculator.isOdd(number)) {
-                    out.println(number + " is odd.");
-                } else {
-                    out.println(number + " is even.");
-                }
-            } else if (problemNumber == 4) {
-                out.println("Enter area1:");
-                double area1 = scanner.nextDouble();
-                System.out.println("Enter area2:");
-                double area2 = scanner.nextDouble();
-                Calculator.calculateBigger(area1, area2);
-            } else if (problemNumber == 5) {
-                doAgain = false;
-                out.println("Program is closed. Bye!");
-            } else {
-                out.println("There is no such an option. Try again");
-            } // close if
+            } catch (IllegalArgumentException e) {
+                System.out.println("There is no such a task. Try again.");
+            }
         } while (doAgain);
     } // close method main
 } // close class

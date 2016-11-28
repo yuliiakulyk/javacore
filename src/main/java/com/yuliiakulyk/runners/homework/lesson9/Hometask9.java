@@ -77,7 +77,7 @@ public class Hometask9 {
                     doAgain = false;
                     break;
                 default:
-                    out.println("There is no such an option. Please, try again");
+                    out.println("There is no such an option. Please, try again.");
             }
         } while (doAgain);
     }

@@ -20,7 +20,7 @@ public class Hometask13WithEnum {
         boolean doAgain = true;
         FileWork fileWork = new FileWork();
         String input;
-        EnumHometask13 enumHometask13;
+        EnumHometask enumHometask;
         do {
             out.println("Please select number of a problem to solve:");
             out.println("A - Read int arrays from a file, sort and write to another file.");
@@ -28,8 +28,8 @@ public class Hometask13WithEnum {
             out.println("C - Read input from console and save it to file.");
             out.println("D - Exit.");
             try {
-                enumHometask13 = EnumHometask13.valueOf(getKeyboardInput().toUpperCase());
-                switch (enumHometask13) {
+                enumHometask = EnumHometask.valueOf(getKeyboardInput().toUpperCase());
+                switch (enumHometask) {
                     case A:
                         ArraySortAscDesc sort = new ArraySortAscDesc();
                         ArrayParser parser = new ArrayParser();
@@ -70,6 +70,8 @@ public class Hometask13WithEnum {
                     case D:
                         doAgain = false;
                         break;
+                    default:
+                        System.out.println("There is no such a task. Try again.");
                 }
             } catch (IllegalArgumentException e) {
                 System.out.println("There is no such a task. Try again.");
