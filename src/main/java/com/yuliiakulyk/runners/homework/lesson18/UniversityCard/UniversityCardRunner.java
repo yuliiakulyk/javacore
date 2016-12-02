@@ -1,4 +1,4 @@
-package com.yuliiakulyk.runners.homework.lesson18;
+package com.yuliiakulyk.runners.homework.lesson18.UniversityCard;
 
 import com.yuliiakulyk.app.homework.lesson12.ArrayParser;
 import com.yuliiakulyk.app.utils.FileWork;
@@ -10,7 +10,7 @@ import static com.yuliiakulyk.runners.utils.KeyboardInput.getKeyboardInput;
 /**
  * Created by Yuliia Kulyk on 01.12.2016.
  */
-public class UniversityCard {
+public class UniversityCardRunner {
 
     public void addPeopleToArrayList(String[] fileLines, ArrayList<University> arrayList) {
         String[] personData;
@@ -30,10 +30,10 @@ public class UniversityCard {
         String[] fileLinesEmployees = fileWork.readFileLines("src/main/java/com/yuliiakulyk/runners/homework/lesson18/employees.csv");
         ArrayList<University> employeesArrayList = new ArrayList<>();
         ArrayList<University> studentsArrayList = new ArrayList<>();
-        UniversityCard universityCard = new UniversityCard();
-        universityCard.addPeopleToArrayList(fileLinesEmployees, employeesArrayList);
+        UniversityCardRunner universityCardRunner = new UniversityCardRunner();
+        universityCardRunner.addPeopleToArrayList(fileLinesEmployees, employeesArrayList);
         String[] fileLinesStudents = fileWork.readFileLines("src/main/java/com/yuliiakulyk/runners/homework/lesson18/students.csv");
-        universityCard.addPeopleToArrayList(fileLinesStudents, studentsArrayList);
+        universityCardRunner.addPeopleToArrayList(fileLinesStudents, studentsArrayList);
         boolean doAgain = true;
         do {
             System.out.println("Please choose the category to search in.");
@@ -43,19 +43,19 @@ public class UniversityCard {
             String searchQuery;
             switch (searchType) {
                 case "1":
-                    searchQuery = universityCard.saveKeyboardInputToVariable();
+                    searchQuery = universityCardRunner.saveKeyboardInputToVariable();
                     ArrayList<University> searchResult = new ArrayList<>();
-                    searchResult.addAll(universityCard.findEveryone(searchQuery, studentsArrayList));
-                    searchResult.addAll(universityCard.findEveryone(searchQuery, employeesArrayList));
-                    universityCard.printSearchResult(searchResult, false);
+                    searchResult.addAll(universityCardRunner.findEveryone(searchQuery, studentsArrayList));
+                    searchResult.addAll(universityCardRunner.findEveryone(searchQuery, employeesArrayList));
+                    universityCardRunner.printSearchResult(searchResult, false);
                     break;
                 case "2":
-                    searchQuery = universityCard.saveKeyboardInputToVariable();
-                    universityCard.printSearchResult(universityCard.findInCategory(searchQuery, employeesArrayList), true);
+                    searchQuery = universityCardRunner.saveKeyboardInputToVariable();
+                    universityCardRunner.printSearchResult(universityCardRunner.findInCategory(searchQuery, employeesArrayList), true);
                     break;
                 case "3":
-                    searchQuery = universityCard.saveKeyboardInputToVariable();
-                    universityCard.printSearchResult(universityCard.findInCategory(searchQuery, studentsArrayList), true);
+                    searchQuery = universityCardRunner.saveKeyboardInputToVariable();
+                    universityCardRunner.printSearchResult(universityCardRunner.findInCategory(searchQuery, studentsArrayList), true);
                     break;
                 case "exit":
                     doAgain = false;
