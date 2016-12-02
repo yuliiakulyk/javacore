@@ -8,7 +8,8 @@ public abstract class University {
     String surname;
     FacultyEnum faculty;
 
-    public String toString() {
+    public String nameSurnameToString() {
        return name + " " + surname;
     }
+
 }
