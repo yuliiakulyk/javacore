@@ -1,4 +1,4 @@
-package com.yuliiakulyk.runners.homework.lesson18.SortLines;
+package com.yuliiakulyk.runners.homework.lesson18.sortLines;
 
 import java.util.Collection;
 import java.util.TreeSet;

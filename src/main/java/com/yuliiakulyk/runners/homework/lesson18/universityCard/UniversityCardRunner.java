@@ -1,4 +1,4 @@
-package com.yuliiakulyk.runners.homework.lesson18.UniversityCard;
+package com.yuliiakulyk.runners.homework.lesson18.universityCard;
 
 import com.yuliiakulyk.app.homework.lesson12.ArrayParser;
 import com.yuliiakulyk.app.utils.FileWork;
@@ -27,12 +27,12 @@ public class UniversityCardRunner {
 
     public static void main(String[] args) {
         FileWork fileWork = new FileWork();
-        String[] fileLinesEmployees = fileWork.readFileLines("src/main/java/com/yuliiakulyk/runners/homework/lesson18/employees.csv");
+        String[] fileLinesEmployees = fileWork.readFileLines("src/main/java/com/yuliiakulyk/runners/homework/lesson18/universityCard/employees.csv");
         ArrayList<University> employeesArrayList = new ArrayList<>();
         ArrayList<University> studentsArrayList = new ArrayList<>();
         UniversityCardRunner universityCardRunner = new UniversityCardRunner();
         universityCardRunner.addPeopleToArrayList(fileLinesEmployees, employeesArrayList);
-        String[] fileLinesStudents = fileWork.readFileLines("src/main/java/com/yuliiakulyk/runners/homework/lesson18/students.csv");
+        String[] fileLinesStudents = fileWork.readFileLines("src/main/java/com/yuliiakulyk/runners/homework/lesson18/universityCard/students.csv");
         universityCardRunner.addPeopleToArrayList(fileLinesStudents, studentsArrayList);
         boolean doAgain = true;
         do {
@@ -45,17 +45,17 @@ public class UniversityCardRunner {
                 case "1":
                     searchQuery = universityCardRunner.saveKeyboardInputToVariable();
                     ArrayList<University> searchResult = new ArrayList<>();
-                    searchResult.addAll(universityCardRunner.findEveryone(searchQuery, studentsArrayList));
-                    searchResult.addAll(universityCardRunner.findEveryone(searchQuery, employeesArrayList));
+                    searchResult.addAll(universityCardRunner.find(searchQuery, studentsArrayList));
+                    searchResult.addAll(universityCardRunner.find(searchQuery, employeesArrayList));
                     universityCardRunner.printSearchResult(searchResult, false);
                     break;
                 case "2":
                     searchQuery = universityCardRunner.saveKeyboardInputToVariable();
-                    universityCardRunner.printSearchResult(universityCardRunner.findInCategory(searchQuery, employeesArrayList), true);
+                    universityCardRunner.printSearchResult(universityCardRunner.find(searchQuery, employeesArrayList), true);
                     break;
                 case "3":
                     searchQuery = universityCardRunner.saveKeyboardInputToVariable();
-                    universityCardRunner.printSearchResult(universityCardRunner.findInCategory(searchQuery, studentsArrayList), true);
+                    universityCardRunner.printSearchResult(universityCardRunner.find(searchQuery, studentsArrayList), true);
                     break;
                 case "exit":
                     doAgain = false;
@@ -71,18 +71,7 @@ public class UniversityCardRunner {
         return getKeyboardInput();
     }
 
-    public ArrayList<University> findEveryone(String searchQuery, ArrayList<University> array) {
-        ArrayList<University> searchResult = new ArrayList<>();
-        for (University person : array) {
-            if ((person.name.toLowerCase().contains(searchQuery.toLowerCase())) ||
-                    (person.surname.toLowerCase().contains(searchQuery.toLowerCase()))) {
-                searchResult.add(person);
-            }
-        }
-        return searchResult;
-    }
-
-    public <T extends University> ArrayList<T> findInCategory(String searchQuery, ArrayList<T> array) {
+    public <T extends University> ArrayList<T> find(String searchQuery, ArrayList<T> array) {
         ArrayList<T> searchResult = new ArrayList<>();
         for (T person : array) {
             if (person.toString().toLowerCase().contains(searchQuery.toLowerCase())) {

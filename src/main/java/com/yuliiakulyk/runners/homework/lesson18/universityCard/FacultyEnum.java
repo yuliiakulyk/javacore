@@ -1,4 +1,4 @@
-package com.yuliiakulyk.runners.homework.lesson18.UniversityCard;
+package com.yuliiakulyk.runners.homework.lesson18.universityCard;
 
 /**
  * Created by Yuliia Kulyk on 01.12.2016.
