@@ -74,7 +74,7 @@ Lyubov,Yvanchenko,linguistics,professor
 Mariya,Drobyazko,journalism,professor
 Maryna,Brandys,military,professor
 Marta,Serbynenko,economics,professor
-"Mar""yana",Skrypka,geography,professor
+Mar'yana,Skrypka,geography,professor
 Nadiya,Boroday,economics,professor
 Nataliya,Shostak,history,professor
 Ivan,Chalyy,mathematics,professor
@@ -116,7 +116,7 @@ Lyubov,Aleksandrenko,chemistry,professor
 Mariya,Z·hurskyy,law,professor
 Maryna,Opanasenko,geology,professor
 Marta,Malanyuk,linguistics,professor
-"Mar""yana",Kolomyets,journalism,professor
+Mar'yana,Kolomyets,journalism,professor
 Nadiya,Vasyl'chenko,military,professor
 Nataliya,Smolyak,economics,professor
 Solomiya,Zahdanskyy,geography,professor
@@ -299,7 +299,7 @@ Lyubov,Yshchenko,linguistics,laboratory_assistant
 Mariya,Zelenko,journalism,laboratory_assistant
 Ivan,Mozhovoy,military,laboratory_assistant
 Marta,Vovk,economics,laboratory_assistant
-"Mar""yana",Martynyuk,geography,laboratory_assistant
+Mar'yana,Martynyuk,geography,laboratory_assistant
 Nadiya,Kyyashko,economics,laboratory_assistant
 Nataliya,Sklyarenko,history,laboratory_assistant
 Solomiya,Pokotylo,mathematics,laboratory_assistant
@@ -341,7 +341,7 @@ Lyubov,Tyutyunnyk,chemistry,laboratory_assistant
 Mariya,Tkachenko,law,laboratory_assistant
 Maryna,Tymoshchuk,geology,laboratory_assistant
 Marta,Khomenko,linguistics,laboratory_assistant
-"Mar""yana",Tsvyhun,journalism,laboratory_assistant
+Mar'yana,Tsvyhun,journalism,laboratory_assistant
 Ivan,Chernyakhovskyy,military,laboratory_assistant
 Nataliya,Cherkasskyy,economics,laboratory_assistant
 Solomiya,Chervonenko,geography,laboratory_assistant

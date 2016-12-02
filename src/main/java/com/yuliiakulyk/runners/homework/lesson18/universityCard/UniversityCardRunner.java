@@ -74,7 +74,7 @@ public class UniversityCardRunner {
     public <T extends University> ArrayList<T> find(String searchQuery, ArrayList<T> array) {
         ArrayList<T> searchResult = new ArrayList<>();
         for (T person : array) {
-            if (person.toString().toLowerCase().contains(searchQuery.toLowerCase())) {
+            if (person.toString().toLowerCase().contains(searchQuery.toLowerCase().trim())) {
                 searchResult.add(person);
             }
         }
