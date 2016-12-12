@@ -11,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Yuliia Kulyk on 10.12.2016.
@@ -22,6 +23,7 @@ public class WebdriverTests {
     public void preconditions() {
         System.setProperty("webdriver.chrome.driver", "C:/Users/123/Documents/chromedriver_win32/chromedriver.exe");
         driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
     }
 
     @Test
