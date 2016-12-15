@@ -21,7 +21,6 @@ public class WebdriverTests {
 
     @Before
     public void preconditions() {
-        System.setProperty("webdriver.chrome.driver", "C:/Users/123/Documents/chromedriver_win32/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
     }
