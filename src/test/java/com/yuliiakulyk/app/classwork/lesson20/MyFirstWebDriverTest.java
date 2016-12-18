@@ -32,12 +32,5 @@ public class MyFirstWebDriverTest {
         List<WebElement> linkList = driver.findElements(By.xpath("//*[@class='g']"));
         Assert.assertTrue(linkList.get(0).getText().contains("Monkey"));
         driver.close();
-
-//        try {
-//            Thread.sleep(10000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//        driver.close();
     }
 }
