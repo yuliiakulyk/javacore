@@ -26,6 +26,8 @@ public class EquerestTestCases {
     String dropdownStatus = "*#filter-selector";
     String dropdownStage = "*#filter-stage";
     String projectNames = "h4.title.ng-binding";
+    String entrepreneurRegister = home + "register#/entrepreneur";
+    String emptyNameErrorMessage = "div[ng-messages='e_r_s_one.fio.$error']";
 
     @Before
     public void preconditions() {
@@ -112,6 +114,15 @@ public class EquerestTestCases {
             }
         }
         Assert.assertTrue(pass);
+    }
+
+    @Test
+    public void entrepreneurEmptyNameError() {
+        driver.get(entrepreneurRegister);
+        threadSleep(driver);
+        driver.findElement(By.cssSelector("input#fio")).click();
+        driver.findElement(By.cssSelector("input#city")).click();
+        Assert.assertTrue(driver.findElement(By.cssSelector(emptyNameErrorMessage)).isDisplayed());
     }
 
     public static void threadSleep(WebDriver driver) {
