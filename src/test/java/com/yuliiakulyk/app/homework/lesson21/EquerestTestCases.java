@@ -121,7 +121,7 @@ public class EquerestTestCases {
         driver.get(entrepreneurRegister);
         threadSleep(driver);
         driver.findElement(By.cssSelector("input#fio")).click();
-        driver.findElement(By.cssSelector("input#city")).click();
+        driver.findElement(By.cssSelector("input#cityField")).click();
         Assert.assertTrue(driver.findElement(By.cssSelector(emptyNameErrorMessage)).isDisplayed());
     }
 

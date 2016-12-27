@@ -1,4 +1,4 @@
-package com.yuliiakulyk.app.homework.lesson23;
+package com.yuliiakulyk.app.homework.lesson23.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,14 +8,7 @@ import org.openqa.selenium.support.How;
  * Created by Yuliia Kulyk on 27.12.2016.
  */
 public abstract class EquerestBasePage {
-    public String url = "https://equerest.com";
-//    public WebElement missionMenu;
-//    public WebElement entrepreneurMenu;
-//    public WebElement investorMenu;
-//    public WebElement projectsMenu;
-//    public WebElement signIn;
-//    public WebElement registerInvestor;
-//    public WebElement registerEntrepreneur;
+    public String urlHome = "https://equerest.com";
 
     @FindBy(how = How.CSS, using = "a[href='/info/mission']")
     public WebElement MissionMenu;
