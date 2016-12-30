@@ -2,13 +2,19 @@ package com.yuliiakulyk.app.homework.lesson23.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.How;
+
+import java.util.List;
 
 /**
  * Created by Yuliia Kulyk on 27.12.2016.
  */
 public class RegisterEntrepreneurPage1 extends EquerestBasePage {
     public String url = urlHome + "/register#/entrepreneur";
+    public String errorEmailLocator = "input#mail~div.error-message-container.ng-active";
+    public String errorPhoneLocator = "input#tel~div[ng-messages='e_r_s_one.tel.$error']>div";
+    public String errorPasswordLocator = "input#pass~div[ng-messages='e_r_s_one.pass.$error']>div";
 
     @FindBy(how = How.ID, using = "fio")
     public WebElement nameField;
@@ -35,16 +41,13 @@ public class RegisterEntrepreneurPage1 extends EquerestBasePage {
     public WebElement cityHint;
 
     @FindBy(how = How.CSS, using = "input#tel~div[ng-messages='e_r_s_one.tel.$error']>div")
-    public WebElement errorPhoneFormat;
+    public WebElement errorPhone;
 
     @FindBy(how = How.CSS, using = "input#tel~div.field-help")
     public WebElement phoneHint;
 
     @FindBy(how = How.CSS, using = "input#mail~div>div[ng-message='required']")
     public WebElement errorEmailRequired;
-
-    @FindBy(how = How.CSS, using = "input#mail~div>div[ng-message='pattern']")
-    public WebElement errorEmailFormat;
 
     @FindBy(how = How.CSS, using = "input#pass~div>div.error-message")
     public WebElement errorPwdRequired;

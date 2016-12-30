@@ -1,0 +1,14 @@
+Password,Error message
+,1
+A234567,1
+A2345678,0
+1234R678,0
+1234567P,0
+A2345678,1
+1234R678,1
+1234567p,1
+Zzzzzzzz,0
+zzzzZzzz,0
+zzzzzzzZ,0
+T234567890,0
+        ,1

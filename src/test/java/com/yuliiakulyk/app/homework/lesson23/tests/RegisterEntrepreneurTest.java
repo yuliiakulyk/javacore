@@ -1,16 +1,23 @@
 package com.yuliiakulyk.app.homework.lesson23.tests;
 
 import com.yuliiakulyk.app.homework.lesson23.pages.RegisterEntrepreneurPage1;
+import junitparams.FileParameters;
+import junitparams.JUnitParamsRunner;
+import junitparams.mappers.CsvWithHeaderMapper;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
-import java.util.concurrent.TimeUnit;
+import java.util.List;
 
 /**
  * Created by Yuliia Kulyk on 27.12.2016.
  */
+@RunWith(JUnitParamsRunner.class)
 public class RegisterEntrepreneurTest extends BaseTest {
     RegisterEntrepreneurPage1 page;
 
@@ -62,7 +69,7 @@ public class RegisterEntrepreneurTest extends BaseTest {
     public void checkPhoneRequiredMessage() {
         page.phoneField.click();
         page.emailField.click();
-        Assert.assertTrue(page.errorPhoneFormat.isDisplayed());
+        Assert.assertTrue(page.errorPhone.isDisplayed());
     }
 
     @Test
@@ -86,10 +93,32 @@ public class RegisterEntrepreneurTest extends BaseTest {
     }
 
     @Test
-    public void checkEmailValidation() {
-        page.emailField.sendKeys("t");
+    @FileParameters(value = "src/test/resources/RegisterEntrepreneurTestEmail.csv", mapper = CsvWithHeaderMapper.class)
+    public void checkEmailValidation(String email, int errorMessage) {
+        page.emailField.sendKeys(email);
         page.passwordField.click();
-        Assert.assertTrue(page.errorEmailFormat.isDisplayed());
+        List <WebElement> errorMessages = driver.findElements(By.cssSelector(page.errorEmailLocator));
+        Assert.assertEquals(errorMessage, errorMessages.size());
+    }
+
+    @Test
+    @FileParameters(value = "src/test/resources/RegisterEntrepreneurTestPhone.csv", mapper = CsvWithHeaderMapper.class)
+    public void checkPhoneValidation(String phone, int isError) {
+        page.phoneField.clear();
+        page.phoneField.sendKeys(phone);
+        page.passwordField.click();
+        List<WebElement> errorMessages = driver.findElements(By.cssSelector(page.errorPhoneLocator));
+        Assert.assertEquals(isError, errorMessages.size());
+    }
+
+    @Test
+    @FileParameters(value = "src/test/resources/RegisterEntrepreneurTestPass.csv", mapper = CsvWithHeaderMapper.class)
+    public void checkPasswordValidation(String password, int isError) {
+        page.passwordField.clear();
+        page.passwordField.sendKeys(password);
+        page.phoneField.click();
+        List<WebElement> errorMessages = driver.findElements(By.cssSelector(page.errorPasswordLocator));
+        Assert.assertEquals(isError, errorMessages.size());
     }
 
 }
