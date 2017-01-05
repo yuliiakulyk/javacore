@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 /**
  * Created by Yuliia Kulyk on 15.12.2016.
  */
-public class Actions {
+public class ActionsOnPage {
 
     public static void main(String[] args) {
         WebDriver driver = new ChromeDriver();

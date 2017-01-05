@@ -18,11 +18,11 @@ import java.util.List;
  * Created by Yuliia Kulyk on 27.12.2016.
  */
 @RunWith(JUnitParamsRunner.class)
-public class RegisterEntrepreneurTest extends BaseTest {
+public class RegisterEntrepreneurPage1TestEquerest extends EquerestBaseTest {
     RegisterEntrepreneurPage1 page;
 
     @Before
-    public void setUpEntrepreneur() {
+    public void setUpEntrepreneurPage1() {
         page = PageFactory.initElements(driver, RegisterEntrepreneurPage1.class);
         driver.get(page.url);
     }

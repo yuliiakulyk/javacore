@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by Yuliia Kulyk on 27.12.2016.
  */
-public abstract class BaseTest {
+public abstract class EquerestBaseTest {
     public WebDriver driver;
 
     @Before
