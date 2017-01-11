@@ -1,17 +1,10 @@
 package com.yuliiakulyk.app.homework.lesson7;
 
-import com.sun.deploy.util.ArrayUtil;
-
-import static com.yuliiakulyk.runners.utils.Printers.printArrayOneLine;
-import static java.lang.System.out;
-
-import java.util.Arrays;
-import java.util.HashSet;
-
 
 /**
  * Created by Yuliia Kulyk on 27.10.2016.
  */
+
 public class RandomArrayGenerators {
     public int[] random1DimensionArray(int elements, int min, int max) {
         int[] array = new int[elements];

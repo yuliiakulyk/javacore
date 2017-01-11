@@ -4,12 +4,13 @@ import static java.lang.System.out;
 
 import java.util.ArrayList;
 
-import com.sun.xml.internal.ws.util.StringUtils;
 
 /**
  * Created by 123 on 15.10.2016.
  */
+
 public class TextTransformation {
+
     public String lowerToUpperCase(String lowerCaseString) {
         String upperCaseString = lowerCaseString.toUpperCase();
         out.println("String in upper case: " + upperCaseString);

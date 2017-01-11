@@ -16,9 +16,6 @@ public class RegisterEntrepreneurPage2 extends EquerestBasePage {
     public String radioButtonStageLocator = "div.input-radio-group>div";
     //public String errorProjectName = "input#title~div>div";
     public String errorAdvantages = "textarea#advantages~div[ng-messages = 'e_r_s_two.advantages.$error']>div";
-    public String helpAdvantages = "textarea#advantages~div.field-help";
-    public String errorMonetization = "textarea#monetization_model~div[ng-messages = 'e_r_s_two.monetization_model.$error']>div";
-    public String helpMonetization = "textarea#monetization_model~div.field-help";
     public String errorRequiredAmount = "input#required_amount~div[ng-messages = 'e_r_s_two.required_amount.$error']>div";
     public String helpRequiredAmount = "input#required_amount~div.field-help";
 
@@ -37,11 +34,26 @@ public class RegisterEntrepreneurPage2 extends EquerestBasePage {
     @FindBy(how = How.CSS, using = "textarea#advantages")
     public WebElement advantagesField;
 
+    @FindBy(how = How.CSS, using = "textarea#advantages~div.field-help")
+    public WebElement advantagesHelp;
+
     @FindBy(how = How.CSS, using = "textarea#monetization_model")
     public WebElement monetizationField;
 
-    @FindBy(how = How.CSS, using = "input#required_amount")
+    @FindBy(how = How.CSS, using = "textarea#monetization_model~div[ng-messages = 'e_r_s_two.monetization_model.$error']>div")
+    public WebElement monetizationError;
+
+    @FindBy(how = How.CSS, using = "textarea#monetization_model~div.field-help")
+    public WebElement monetizationHelp;
+
+    @FindBy(how = How.CSS, using = "input#sale_sum")
     public WebElement amountField;
+
+    @FindBy(how = How.CSS, using = "input#sale_sum~div[ng-messages = 'e_r_s_two.required_amount.$error']>div")
+    public WebElement amountError;
+
+    @FindBy(how = How.CSS, using = "input#sale_sum~div.field-help")
+    public WebElement amountHelp;
 
     @FindBy(how = How.CSS, using = "label[for='checkbox_agree']")
     public WebElement checkboxAgree;

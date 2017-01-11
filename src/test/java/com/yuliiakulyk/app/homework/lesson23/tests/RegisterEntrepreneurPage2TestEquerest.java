@@ -85,7 +85,33 @@ public class RegisterEntrepreneurPage2TestEquerest extends EquerestBaseTest {
     public void advantagesEmpty() {
         page2.advantagesField.click();
         page2.monetizationField.click();
-        Assert.assertTrue(driver.findElement(By.cssSelector(page2.helpAdvantages)).isDisplayed());
+        Assert.assertTrue(page2.advantagesHelp.isDisplayed());
+    }
+
+    @Test
+    public void advantagesHelp() {
+        page2.advantagesField.click();
+        Assert.assertTrue(page2.advantagesHelp.isDisplayed());
+    }
+
+    @Test
+    public void monetizationEmpty() {
+        page2.monetizationField.click();
+        page2.advantagesField.click();
+        Assert.assertTrue(page2.monetizationError.isDisplayed());
+    }
+
+    @Test
+    public void monetizationHelp() {
+        page2.monetizationField.click();
+        Assert.assertTrue(page2.monetizationHelp.isDisplayed());
+    }
+
+    @Ignore
+    @Test
+    public void amountHelp() {
+        page2.amountField.click();
+        Assert.assertTrue(page2.amountHelp.isDisplayed());
     }
 
 }
