@@ -81,6 +81,7 @@ public class RegisterEntrepreneurPage2TestEquerest extends EquerestBaseTest {
         Assert.assertTrue(page2.helpProjectDescription.isDisplayed());
     }
 
+    @Ignore
     @Test
     public void advantagesEmpty() {
         page2.advantagesField.click();
