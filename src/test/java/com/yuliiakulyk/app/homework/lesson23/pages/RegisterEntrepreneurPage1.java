@@ -16,6 +16,7 @@ public class RegisterEntrepreneurPage1 extends EquerestBasePage {
     public String errorPhoneLocator = "input#tel~div[ng-messages='e_r_s_one.tel.$error']>div";
     public String errorPasswordLocator = "input#pass~div[ng-messages='e_r_s_one.pass.$error']>div";
 
+
     @FindBy(how = How.ID, using = "fio")
     public WebElement nameField;
 
