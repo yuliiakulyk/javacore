@@ -1,4 +1,4 @@
-package com.yuliiakulyk.app.homework.lesson23.pages;
+package com.yuliiakulyk.app.classwork.lesson26.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;

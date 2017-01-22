@@ -1,4 +1,4 @@
-package com.yuliiakulyk.app.homework.lesson23.pages;
+package com.yuliiakulyk.app.classwork.lesson26.pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -17,6 +17,7 @@ public class AddProjectAsEntrepreneurStepOnePage extends AbstractPage {
     public By phone = By.id("tel");
     public By email = By.id("mail");
     public By password = By.id("pass");
+    public By checkbox = By.cssSelector("div.input-checkbox");
     public By step2Button = By.xpath("//*[@class = 'button button-blue button-next']");
     public By toastMessage = By.xpath("//*[@class='toast-message']");
 
@@ -45,4 +46,5 @@ public class AddProjectAsEntrepreneurStepOnePage extends AbstractPage {
         String actualEm = em.getAttribute("aria-label");
         Assert.assertEquals(alertText, actualEm);
     }
+
 }

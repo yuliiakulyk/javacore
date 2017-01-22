@@ -1,5 +1,7 @@
-package com.yuliiakulyk.app.homework.lesson23.pages;
+package com.yuliiakulyk.app.classwork.lesson26.pages;
 
+import com.yuliiakulyk.app.classwork.lesson26.pages.AbstractPage;
+import com.yuliiakulyk.app.classwork.lesson26.pages.AddProjectAsEntrepreneurStepOnePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
