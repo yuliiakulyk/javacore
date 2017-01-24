@@ -16,7 +16,7 @@ public class BasicTests {
     private static int[] inputData = null;
     private static int[] expectedResults = null;
 
-    @BeforeClass //input data the same for all features
+    @BeforeClass //input data the same for all tests
     public static void preConditionsForClass() throws IOException {
         inputData = readTheFile(INPUT_DATA);
     }
@@ -27,7 +27,7 @@ public class BasicTests {
     }
 
     @Test
-    public void aFirstTest() { //because features in alphabetical order we use 'a', 'b' to order features
+    public void aFirstTest() { //because tests in alphabetical order we use 'a', 'b' to order tests
         System.out.println("Simple sorting test");
         Arrays.sort(inputData);
         Assert.assertArrayEquals(expectedResults, inputData);

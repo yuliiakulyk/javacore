@@ -2,7 +2,7 @@ package com.yuliiakulyk.app.classwork.lesson27.steps;
 
 import com.yuliiakulyk.app.classwork.lesson27.pages.AddProjectAsEntrepreneurStepOnePage;
 import com.yuliiakulyk.app.classwork.lesson27.pages.AddProjectAsEntrepreneurStepTwoPage;
-import com.yuliiakulyk.app.homework.lesson23.features.EquerestBaseTest;
+import com.yuliiakulyk.app.homework.lesson23.tests.EquerestBaseTest;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;

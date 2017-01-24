@@ -2,19 +2,12 @@ package com.yuliiakulyk.app.classwork.lesson26.steps;
 
 import com.yuliiakulyk.app.classwork.lesson26.pages.AddProjectAsEntrepreneurStepOnePage;
 import com.yuliiakulyk.app.classwork.lesson26.pages.AddProjectAsEntrepreneurStepTwoPage;
-import com.yuliiakulyk.app.homework.lesson23.features.EquerestBaseTest;
-import cucumber.api.PendingException;
+import com.yuliiakulyk.app.homework.lesson23.tests.EquerestBaseTest;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import org.junit.After;
 import org.junit.Assert;
-import org.junit.Before;
-import org.openqa.selenium.WebElement;
-
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Yuliia Kulyk on 22.01.2017.

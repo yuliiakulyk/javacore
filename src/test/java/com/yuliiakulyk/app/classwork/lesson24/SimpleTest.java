@@ -8,7 +8,7 @@ import ru.yandex.qatools.allure.annotations.*;
  * Created by Yuliia Kulyk on 14.01.2017.
  */
 @Title("This is our cool test suite")
-@Description("In this cool suite we will test only cool features") public class SimpleTest {
+@Description("In this cool suite we will test only cool tests") public class SimpleTest {
     @Title("First cool check")
     @Description("In this cool test we will check cool thing")
     @Test

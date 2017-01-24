@@ -1,4 +1,4 @@
-package com.yuliiakulyk.app.homework.lesson23.features;
+package com.yuliiakulyk.app.homework.lesson23.tests;
 
 import com.yuliiakulyk.app.homework.lesson23.pages.RegisterEntrepreneurPage1;
 import junitparams.FileParameters;

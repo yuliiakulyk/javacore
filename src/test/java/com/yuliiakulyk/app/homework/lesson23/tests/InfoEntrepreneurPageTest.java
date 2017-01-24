@@ -1,4 +1,4 @@
-package com.yuliiakulyk.app.homework.lesson23.features;
+package com.yuliiakulyk.app.homework.lesson23.tests;
 
 import com.yuliiakulyk.app.homework.lesson23.pages.InfoEntrepreneurPage;
 import org.junit.Assert;

@@ -1,15 +1,12 @@
-package com.yuliiakulyk.app.homework.lesson23.features;
+package com.yuliiakulyk.app.homework.lesson23.tests;
 
 import org.junit.After;
 import org.junit.Before;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
-import ru.yandex.qatools.allure.annotations.Attachment;
 
 import java.io.File;
 import java.io.IOException;
@@ -93,9 +90,9 @@ public abstract class EquerestBaseTest {
 //            this.driver = new ChromeDriver();
 //        }
 
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(15, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
     }
 
     @After
