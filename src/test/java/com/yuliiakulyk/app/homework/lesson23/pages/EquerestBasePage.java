@@ -8,7 +8,7 @@ import org.openqa.selenium.support.How;
  * Created by Yuliia Kulyk on 27.12.2016.
  */
 public abstract class EquerestBasePage {
-    public String urlHome = "https://equerest.com";
+    public String urlHome = "https://dev.equerest.com";
 
     @FindBy(how = How.CSS, using = "a[href='/info/mission']")
     public WebElement MissionMenu;

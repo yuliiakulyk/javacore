@@ -33,11 +33,8 @@ public class ExplicitWaits {
         calendarDate.click();
         driver.findElement(By.xpath("(//a[.='Найти'])[1]")).click();
         WebDriverWait wait = new WebDriverWait(driver, 60);
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.Growl-Logo")));
-        WebElement result = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("a.ticket-link")));
-        result.click();
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        Assert.assertTrue(driver.findElement(By.cssSelector("div.payment-action_button")).isEnabled());
+        WebElement result = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("span.offers-airlines-switch_option")));
+        Assert.assertTrue(driver.findElement(By.cssSelector("span.offers-airlines-switch_option")).isEnabled());
         driver.quit();
     }
 }
