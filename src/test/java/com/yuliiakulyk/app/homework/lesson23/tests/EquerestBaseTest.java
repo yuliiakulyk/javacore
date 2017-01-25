@@ -83,19 +83,6 @@ public abstract class EquerestBaseTest {
             this.driver = new FirefoxDriver();
         }
 
-
-//        if (BROWSER == null || BROWSER.equalsIgnoreCase("Firefox") ||
-//                BROWSER.equalsIgnoreCase("")) {
-//            this.driver = new FirefoxDriver();
-//        } else if (BROWSER.equalsIgnoreCase("Chrome")) {
-//            if (isWindows()) {
-//                System.setProperty("webdriver.chrome.driver", CHROME_PATH_WIN);
-//            } else if (isMac()){
-//                System.setProperty("webdriver.chrome.driver", CHROME_PATH_MAC);
-//            }
-//            this.driver = new ChromeDriver();
-//        }
-
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
@@ -106,20 +93,17 @@ public abstract class EquerestBaseTest {
 
         @Override
         protected void failed(Throwable e, Description description) {
-            saveImageAttach("failed rule: screenshot from " + BROWSER);
+            saveImageAttach("screenshot from " + BROWSER);
         }
 
         @Override
         protected void finished(Description description) {
-            saveImageAttach("finished rule: screenshot from " + BROWSER);
             driver.quit();
         }
     };
 
 
-    //@After
     public void tearDown() {
-        //saveImageAttach("after: screenshot from " + BROWSER);
         driver.quit();
     }
 
