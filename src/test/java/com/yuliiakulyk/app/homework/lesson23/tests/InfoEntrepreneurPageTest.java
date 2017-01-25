@@ -11,7 +11,7 @@ import org.openqa.selenium.support.PageFactory;
  */
 public class InfoEntrepreneurPageTest extends EquerestBaseTest {
     InfoEntrepreneurPage page;
-    String targetUrl = "https://equerest.com/register#/entrepreneur";
+    String targetUrl = page.urlHome + "1/register#/entrepreneur";
 
     @Before
     public void setUpInfoPage() {

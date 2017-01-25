@@ -2,11 +2,17 @@ package com.yuliiakulyk.app.homework.lesson23.tests;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
+import org.junit.rules.TestWatcher;
+import org.junit.runner.Description;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
+import ru.yandex.qatools.allure.annotations.Attachment;
 
 import java.io.File;
 import java.io.IOException;
@@ -95,9 +101,25 @@ public abstract class EquerestBaseTest {
         driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
     }
 
-    @After
+    @Rule
+    public TestWatcher screenshotOnFail = new TestWatcher() {
+
+        @Override
+        protected void failed(Throwable e, Description description) {
+            saveImageAttach("failed rule: screenshot from " + BROWSER);
+        }
+
+        @Override
+        protected void finished(Description description) {
+            saveImageAttach("finished rule: screenshot from " + BROWSER);
+            driver.quit();
+        }
+    };
+
+
+    //@After
     public void tearDown() {
-        //saveImageAttach("screenshot from " + BROWSER);
+        //saveImageAttach("after: screenshot from " + BROWSER);
         driver.quit();
     }
 
@@ -113,17 +135,17 @@ public abstract class EquerestBaseTest {
         return (OS.contains("nix") || OS.contains("nux") || OS.contains("aix"));
     }
 
-//    @Attachment(value = "{0}", type = "image/png")
-//    public byte[] saveImageAttach(String attachName) {
-//        try {
-//            File srcFile =
-//                    ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-//            return toByteArray(srcFile);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        return new byte[0];
-//    }
+    @Attachment(value = "{0}", type = "image/png")
+    public byte[] saveImageAttach(String attachName) {
+        try {
+            File srcFile =
+                    ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            return toByteArray(srcFile);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new byte[0];
+    }
 
     private static byte[] toByteArray(File file) throws IOException {
         return Files.readAllBytes(Paths.get(file.getPath()));
