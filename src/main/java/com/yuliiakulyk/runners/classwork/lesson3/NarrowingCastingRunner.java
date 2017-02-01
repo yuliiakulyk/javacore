@@ -1,6 +1,6 @@
 package com.yuliiakulyk.runners.classwork.lesson3;
 
-import com.yuliiakulyk.app.classwork.lesson3.NarrowingCasting;
+import com.yuliiakulyk.app.classwork.TypeCasting.NarrowingCasting;
 
 /**
  * Created by Юлия on 08.10.2016.

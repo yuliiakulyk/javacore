@@ -2,7 +2,7 @@ package com.yuliiakulyk.runners.homework.lesson5;
 
 import java.util.Scanner;
 
-import com.yuliiakulyk.app.classwork.lesson5.Calculator;
+import com.yuliiakulyk.app.classwork.ExpressionsControlStatements.Calculator;
 import com.yuliiakulyk.runners.homework.lesson13.EnumHometask;
 
 import static com.yuliiakulyk.runners.utils.KeyboardInput.getKeyboardInput;

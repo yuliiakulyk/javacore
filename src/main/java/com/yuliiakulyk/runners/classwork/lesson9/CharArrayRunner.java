@@ -1,6 +1,6 @@
 package com.yuliiakulyk.runners.classwork.lesson9;
 
-import com.yuliiakulyk.app.classwork.lesson9.CharArray;
+import com.yuliiakulyk.app.classwork.ArraysAndSorting.CharArray;
 
 /**
  * Created by Yuliia Kulyk on 31.10.2016.

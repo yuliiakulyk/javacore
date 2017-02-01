@@ -1,7 +1,7 @@
 package com.yuliiakulyk.runners.homework.lesson12;
 
-import com.yuliiakulyk.app.classwork.lesson12.Caesar;
-import com.yuliiakulyk.app.classwork.lesson12.Enigma;
+import com.yuliiakulyk.app.classwork.UseStringBuilder.Caesar;
+import com.yuliiakulyk.app.classwork.UseStringBuilder.Enigma;
 import com.yuliiakulyk.app.homework.lesson12.ArrayParser;
 import com.yuliiakulyk.app.homework.lesson9.ArraySortAscDesc;
 

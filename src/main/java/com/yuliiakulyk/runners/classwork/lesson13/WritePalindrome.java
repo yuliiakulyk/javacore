@@ -1,6 +1,6 @@
 package com.yuliiakulyk.runners.classwork.lesson13;
 
-import com.yuliiakulyk.app.classwork.lesson10.Palindrome;
+import com.yuliiakulyk.app.classwork.WorkWithString.Palindrome;
 
 import java.io.*;
 
