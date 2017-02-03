@@ -1,7 +1,7 @@
 package com.yuliiakulyk.runners.homework.lesson18.universityCard;
 
-import com.yuliiakulyk.app.homework.lesson12.ArrayParser;
-import com.yuliiakulyk.app.utils.FileWork;
+import com.yuliiakulyk.app.UseStringBuilder.ArrayParser;
+import com.yuliiakulyk.runners.ConvertorsAndFiles.classes.FileWork;
 
 import java.util.ArrayList;
 

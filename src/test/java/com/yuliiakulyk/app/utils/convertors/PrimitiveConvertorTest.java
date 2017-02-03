@@ -1,5 +1,6 @@
 package com.yuliiakulyk.app.utils.convertors;
 
+import com.yuliiakulyk.runners.ConvertorsAndFiles.classes.PrimitiveConvertor;
 import org.junit.Assert;
 import org.junit.Test;
 

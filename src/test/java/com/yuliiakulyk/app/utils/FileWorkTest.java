@@ -1,11 +1,11 @@
 package com.yuliiakulyk.app.utils;
 
+import com.yuliiakulyk.runners.ConvertorsAndFiles.classes.FileWork;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
 
 /**

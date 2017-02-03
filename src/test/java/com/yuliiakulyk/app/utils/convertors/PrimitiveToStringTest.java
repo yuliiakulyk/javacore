@@ -1,8 +1,7 @@
 package com.yuliiakulyk.app.utils.convertors;
 
-import junitparams.FileParameters;
+import com.yuliiakulyk.runners.ConvertorsAndFiles.classes.PrimitiveToString;
 import junitparams.JUnitParamsRunner;
-import junitparams.mappers.CsvWithHeaderMapper;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

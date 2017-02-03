@@ -1,12 +1,11 @@
 package com.yuliiakulyk.app.homework.lesson6;
 
-import com.yuliiakulyk.app.homework.lesson4.BiologyCalc;
+import com.yuliiakulyk.app.ForUnitTesting.BiologyCalc;
 import junitparams.FileParameters;
 import junitparams.JUnitParamsRunner;
 import junitparams.mappers.CsvWithHeaderMapper;
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 

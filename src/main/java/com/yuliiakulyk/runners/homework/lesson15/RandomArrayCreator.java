@@ -1,6 +1,6 @@
 package com.yuliiakulyk.runners.homework.lesson15;
 
-import com.yuliiakulyk.app.homework.lesson7.RandomArrayGenerators;
+import com.yuliiakulyk.app.ArraysAndSorting.RandomArrayGenerators;
 
 /**
  * Created by Yuliia Kulyk on 21.11.2016.

@@ -1,17 +1,13 @@
 package com.yuliiakulyk.app.homework.lesson6;
 
-import com.yuliiakulyk.app.homework.lesson4.MathProblems;
+import com.yuliiakulyk.app.ForUnitTesting.MathProblems;
 import junitparams.FileParameters;
 import junitparams.JUnitParamsRunner;
 import junitparams.mappers.CsvWithHeaderMapper;
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
-import java.io.IOException;
-import java.util.ArrayList;
 
 /**
  * Created by DELL on 20.10.2016.

@@ -1,6 +1,6 @@
 package com.yuliiakulyk.app.classwork.lesson6;
 
-import com.yuliiakulyk.app.classwork.ForUnitTesting.MathFunc;
+import com.yuliiakulyk.app.ForUnitTesting.MathFunc;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
