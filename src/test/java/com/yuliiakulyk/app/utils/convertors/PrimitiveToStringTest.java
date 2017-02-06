@@ -1,6 +1,6 @@
 package com.yuliiakulyk.app.utils.convertors;
 
-import com.yuliiakulyk.runners.ConvertorsAndFiles.classes.PrimitiveToString;
+import com.yuliiakulyk.runners.convertors_and_files.classes.PrimitiveToString;
 import junitparams.JUnitParamsRunner;
 import org.junit.Assert;
 import org.junit.Before;

@@ -1,6 +1,6 @@
 package com.yuliiakulyk.app.homework.lesson18;
 
-import com.yuliiakulyk.runners.homework.lesson18.universityCard.UniversityCardRunner;
+import com.yuliiakulyk.runners.collections.searchTeachersAndStudentsProblem.UniversityCardRunner;
 import org.junit.Before;
 import org.junit.Test;
 

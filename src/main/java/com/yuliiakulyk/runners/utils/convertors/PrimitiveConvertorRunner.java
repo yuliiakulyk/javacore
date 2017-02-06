@@ -1,7 +1,7 @@
 package com.yuliiakulyk.runners.utils.convertors;
 
 
-import com.yuliiakulyk.runners.ConvertorsAndFiles.classes.PrimitiveConvertor;
+import com.yuliiakulyk.runners.convertors_and_files.classes.PrimitiveConvertor;
 
 public class PrimitiveConvertorRunner {
     public static void main(String args[]) {

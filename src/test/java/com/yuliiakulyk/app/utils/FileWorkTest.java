@@ -1,6 +1,6 @@
 package com.yuliiakulyk.app.utils;
 
-import com.yuliiakulyk.runners.ConvertorsAndFiles.classes.FileWork;
+import com.yuliiakulyk.runners.convertors_and_files.classes.FileWork;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

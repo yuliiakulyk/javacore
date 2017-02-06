@@ -1,6 +1,6 @@
 package com.yuliiakulyk.app.homework.lesson6;
 
-import com.yuliiakulyk.app.ForUnitTesting.MathProblems;
+import com.yuliiakulyk.app.for_unit_testing.MathProblems;
 import junitparams.FileParameters;
 import junitparams.JUnitParamsRunner;
 import junitparams.mappers.CsvWithHeaderMapper;

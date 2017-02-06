@@ -1,6 +1,6 @@
 package com.yuliiakulyk.app.utils.convertors;
 
-import com.yuliiakulyk.runners.ConvertorsAndFiles.classes.CharsToString;
+import com.yuliiakulyk.runners.convertors_and_files.classes.CharsToString;
 import junitparams.FileParameters;
 import junitparams.JUnitParamsRunner;
 import junitparams.mappers.CsvWithHeaderMapper;
