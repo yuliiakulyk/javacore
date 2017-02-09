@@ -1,7 +1,7 @@
 package com.yuliiakulyk.runners.collections.searchTeachersAndStudentsProblem;
 
-import com.yuliiakulyk.app.use_string_builder.ArrayParser;
-import com.yuliiakulyk.runners.convertors_and_files.classes.FileWork;
+import com.yuliiakulyk.app.string.builder.ArrayParser;
+import com.yuliiakulyk.runners.convertors.and.files.classes.FileWork;
 
 import java.util.ArrayList;
 
