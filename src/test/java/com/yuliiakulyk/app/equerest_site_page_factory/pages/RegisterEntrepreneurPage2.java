@@ -1,4 +1,4 @@
-package com.yuliiakulyk.app.homework.lesson23.pages;
+package com.yuliiakulyk.app.equerest_site_page_factory.pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;

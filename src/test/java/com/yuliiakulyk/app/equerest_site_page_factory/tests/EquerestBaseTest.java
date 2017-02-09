@@ -1,6 +1,5 @@
-package com.yuliiakulyk.app.homework.lesson23.tests;
+package com.yuliiakulyk.app.equerest_site_page_factory.tests;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.rules.TestWatcher;

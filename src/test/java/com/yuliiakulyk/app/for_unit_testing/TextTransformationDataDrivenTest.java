@@ -1,4 +1,4 @@
-package com.yuliiakulyk.app.homework.lesson6;
+package com.yuliiakulyk.app.for_unit_testing;
 
 import com.yuliiakulyk.app.for_unit_testing.TextTransformation;
 import junitparams.FileParameters;

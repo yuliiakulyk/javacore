@@ -1,4 +1,4 @@
-package com.yuliiakulyk.app.homework.lesson27;
+package com.yuliiakulyk.app;
 
 import org.junit.After;
 import org.junit.Assert;

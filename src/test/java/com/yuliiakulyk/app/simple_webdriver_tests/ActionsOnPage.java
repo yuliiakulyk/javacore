@@ -1,4 +1,4 @@
-package com.yuliiakulyk.app.homework.lesson20;
+package com.yuliiakulyk.app.simple_webdriver_tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

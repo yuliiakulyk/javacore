@@ -1,4 +1,4 @@
-package com.yuliiakulyk.app.homework.lesson20;
+package com.yuliiakulyk.app.simple_webdriver_tests;
 
 import org.junit.After;
 import org.junit.Assert;

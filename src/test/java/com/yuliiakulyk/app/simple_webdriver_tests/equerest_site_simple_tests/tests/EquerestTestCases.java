@@ -1,4 +1,4 @@
-package com.yuliiakulyk.app.homework.lesson21;
+package com.yuliiakulyk.app.simple_webdriver_tests.equerest_site_simple_tests.tests;
 
 import org.junit.After;
 import org.junit.Assert;

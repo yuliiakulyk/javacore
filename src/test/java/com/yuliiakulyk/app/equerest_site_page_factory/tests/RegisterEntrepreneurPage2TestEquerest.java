@@ -1,7 +1,7 @@
-package com.yuliiakulyk.app.homework.lesson23.tests;
+package com.yuliiakulyk.app.equerest_site_page_factory.tests;
 
-import com.yuliiakulyk.app.homework.lesson23.pages.RegisterEntrepreneurPage1;
-import com.yuliiakulyk.app.homework.lesson23.pages.RegisterEntrepreneurPage2;
+import com.yuliiakulyk.app.equerest_site_page_factory.pages.RegisterEntrepreneurPage1;
+import com.yuliiakulyk.app.equerest_site_page_factory.pages.RegisterEntrepreneurPage2;
 import junitparams.JUnitParamsRunner;
 import org.junit.Assert;
 import org.junit.Before;

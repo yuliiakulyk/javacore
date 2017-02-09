@@ -1,4 +1,4 @@
-package com.yuliiakulyk.app.homework.lesson21.pages;
+package com.yuliiakulyk.app.simple_webdriver_tests.equerest_site_simple_tests.pages;
 
 import org.openqa.selenium.WebDriver;
 

@@ -1,6 +1,5 @@
 package com.yuliiakulyk.app.simple_webdriver_tests;
 
-import com.yuliiakulyk.app.homework.lesson21.tests.BaseTests;
 import org.junit.Test;
 import org.openqa.selenium.support.PageFactory;
 

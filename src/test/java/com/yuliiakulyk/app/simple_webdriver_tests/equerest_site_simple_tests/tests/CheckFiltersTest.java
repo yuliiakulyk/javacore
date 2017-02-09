@@ -1,6 +1,7 @@
-package com.yuliiakulyk.app.homework.lesson21.tests;
+package com.yuliiakulyk.app.simple_webdriver_tests.equerest_site_simple_tests.tests;
 
-import com.yuliiakulyk.app.homework.lesson21.pages.ProjectsPage;
+import com.yuliiakulyk.app.simple_webdriver_tests.equerest_site_simple_tests.pages.ProjectsPage;
+import com.yuliiakulyk.app.simple_webdriver_tests.BaseTests;
 import org.junit.Test;
 
 /**
