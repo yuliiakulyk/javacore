@@ -26,4 +26,4 @@ Most of these methods are covered by unit tests.
 Also among tests you can find simple Selemium Webdriver tests, tests using Page Object and Page Factory patterns, and a BDD Cucumber test.
 
 Maven Surefire plugin and saved drivers allow running a set of tests on different browsers and OS, and Allure framework generates a report.
-TestWatcher class' failed() method makes screenshot of failed tests that are attached to an Allure report.
+TestWatcher class' failed() method makes screenshots of failed tests that are attached to an Allure report.
