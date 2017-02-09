@@ -1,4 +1,4 @@
-package com.yuliiakulyk.app.classwork.bdd_cucumber_test.pages;
+package com.yuliiakulyk.app.bdd_cucumber_test.pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;

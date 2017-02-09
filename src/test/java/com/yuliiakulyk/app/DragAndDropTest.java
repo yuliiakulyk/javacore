@@ -1,4 +1,4 @@
-package com.yuliiakulyk.app.classwork.lesson25;
+package com.yuliiakulyk.app;
 
 import org.junit.Test;
 import org.openqa.selenium.*;

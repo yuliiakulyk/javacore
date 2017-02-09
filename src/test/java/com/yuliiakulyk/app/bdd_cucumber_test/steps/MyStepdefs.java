@@ -1,7 +1,7 @@
-package com.yuliiakulyk.app.classwork.bdd_cucumber_test.steps;
+package com.yuliiakulyk.app.bdd_cucumber_test.steps;
 
-import com.yuliiakulyk.app.classwork.bdd_cucumber_test.pages.AddProjectAsEntrepreneurStepOnePage;
-import com.yuliiakulyk.app.classwork.bdd_cucumber_test.pages.AddProjectAsEntrepreneurStepTwoPage;
+import com.yuliiakulyk.app.bdd_cucumber_test.pages.AddProjectAsEntrepreneurStepOnePage;
+import com.yuliiakulyk.app.bdd_cucumber_test.pages.AddProjectAsEntrepreneurStepTwoPage;
 import com.yuliiakulyk.app.equerest_site_page_factory.tests.EquerestBaseTest;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
