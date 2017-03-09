@@ -13,8 +13,7 @@ public class MainPageTest extends BaseTest {
     public MainPage page;
 
     @Before
-    public void setUp() {
-        driver = new FirefoxDriver();
+    public void preconditions() {
         page = new MainPage(driver);
         driver.get(page.baseUrlBegginning + page.baseUrlEnd);
     }
@@ -24,8 +23,4 @@ public class MainPageTest extends BaseTest {
         Assert.assertTrue(page.checkFieldActive(page.inputAirportFrom));
     }
 
-    @After
-    public void tearDown() {
-        driver.quit();
-    }
 }
