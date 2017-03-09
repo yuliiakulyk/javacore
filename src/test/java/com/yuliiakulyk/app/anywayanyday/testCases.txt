@@ -1,0 +1,1 @@
+1. verify that active input field is highlighted in avia, hotel and train forms.
