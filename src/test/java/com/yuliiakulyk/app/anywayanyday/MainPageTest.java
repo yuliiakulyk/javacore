@@ -1,13 +1,9 @@
 package com.yuliiakulyk.app.anywayanyday;
 
 import com.yuliiakulyk.runners.convertors.and.files.classes.FileWork;
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import ru.yandex.qatools.allure.annotations.Step;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -52,7 +48,18 @@ public class MainPageTest extends BaseTest {
         for (int i = 0; i < airportCodes.length; i++) {
             page.checkOneCode(page.inputAirportFrom, airportCodes[i], page.recognizedAirportCodeCityFrom, unrecognizedCodes);
         }
-        //System.out.println(unrecognizedCodes.toArray().toString());
+        System.out.println(Arrays.toString(unrecognizedCodes.toArray()));
+        Assert.assertEquals(0, unrecognizedCodes.size());
+    }
+
+    @Test
+    public void checkRecognitionOfAirportCodesCityTo() {
+        FileWork fileWork = new FileWork();
+        String[] airportCodes = fileWork.readFileLines("src/test/java/com/yuliiakulyk/app/anywayanyday/airportcodes.txt");
+        ArrayList<String> unrecognizedCodes = new ArrayList<>();
+        for (int i = 0; i < airportCodes.length; i++) {
+            page.checkOneCode(page.inputAirportTo, airportCodes[i], page.recognizedAirportCodeCityTo, unrecognizedCodes);
+        }
         System.out.println(Arrays.toString(unrecognizedCodes.toArray()));
         Assert.assertEquals(0, unrecognizedCodes.size());
     }

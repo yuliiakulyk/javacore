@@ -9,6 +9,7 @@ import ru.yandex.qatools.allure.annotations.Step;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Yuliia Kulyk on 08.03.2017.
@@ -19,7 +20,7 @@ public class MainPage extends BasePage {
     public By geoSuggest = By.cssSelector("ul.geo-suggest>li");
     public By recognizedAirportCodeCityFrom = By.cssSelector("div.ui-input.departure-airport.col100>span.airport-code");
     public By recognizedAirportCodeCityTo = By.cssSelector("div.ui-input.arrival-airport.col100>span.airport-code");
-
+    public By geoSuggestAirportCodes = By.cssSelector("ul.geo-suggest>li>div.code");
 
     public MainPage(WebDriver driver) {
         super(driver);
@@ -48,9 +49,23 @@ public class MainPage extends BasePage {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        field.sendKeys(Keys.ENTER);
+        driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+        List<WebElement> geoSuggests = driver.findElements(geoSuggestAirportCodes);
+        if (geoSuggests.size() > 0) {
+            int rightSuggestion = -1;
+            for (int i = 0; i < geoSuggests.size(); i++) {
+                if (geoSuggests.get(i).getText().equals(code)) {
+                    rightSuggestion = i;
+                    geoSuggests.get(i).click();
+                }
+            }
+            if (rightSuggestion == -1) {
+                unrecognizedCodes.add(code);
+                return;
+            }
+        }
         try {
-            Thread.sleep(1000);
+            Thread.sleep(500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
