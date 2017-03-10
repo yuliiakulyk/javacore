@@ -64,6 +64,7 @@ public class MainPageTest extends BaseTest {
         Assert.assertEquals(0, unrecognizedCodes.size());
     }
 
+    public void checkReverseFlightButton() {
 
-
+    }
 }

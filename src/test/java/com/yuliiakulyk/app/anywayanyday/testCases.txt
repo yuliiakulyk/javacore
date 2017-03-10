@@ -1,5 +1,5 @@
-1. verify that active input field is highlighted in avia, hotel and train forms.
-2. verify all airport IATA codes are recognized.
+1. verify that active input field is highlighted in avia, hotel and train forms.    +
+2. verify all airport IATA codes are recognized.    +
 3. verify another form appears on clicking "Reverse flight".
 4. verify additional input fields appear on clicking "Continue the route", previous destination is departure point.
 5. click on passengers - counter of adults, kids appears

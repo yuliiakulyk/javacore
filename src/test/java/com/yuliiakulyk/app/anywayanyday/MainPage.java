@@ -21,6 +21,9 @@ public class MainPage extends BasePage {
     public By recognizedAirportCodeCityFrom = By.cssSelector("div.ui-input.departure-airport.col100>span.airport-code");
     public By recognizedAirportCodeCityTo = By.cssSelector("div.ui-input.arrival-airport.col100>span.airport-code");
     public By geoSuggestAirportCodes = By.cssSelector("ul.geo-suggest>li>div.code");
+    public By backFlightButton = By.className("back-flight");
+    public By dayInCalendar = By.className("day");
+    public By departureDayButton = By.cssSelector("div.ui-input.ui-input-date.date.col100.select.active");
 
     public MainPage(WebDriver driver) {
         super(driver);
@@ -74,4 +77,25 @@ public class MainPage extends BasePage {
             unrecognizedCodes.add(code);
         }
     }
+
+    public MainPage fillCity(By cityField, String text) {
+        WebElement field = driver.findElement(cityField);
+        field.clear();
+        field.sendKeys(text);
+        field.sendKeys(Keys.ENTER);
+        return this;
+    }
+
+//    public MainPage fillDate(int daysFromToday) {
+//        driver.findElement(departureDayButton).click();
+//        List<WebElement> availableDays = driver.findElements(dayInCalendar);
+//        int j = 0;
+//
+//        for (int i = 0; i < availableDays.size(); i++) {
+//            if (!availableDays.get(i).isEnabled()) {
+//
+//            }
+//        }
+//        return this;
+//    }
 }
