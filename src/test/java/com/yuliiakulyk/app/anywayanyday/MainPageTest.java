@@ -4,6 +4,7 @@ import com.yuliiakulyk.runners.convertors.and.files.classes.FileWork;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.By;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -64,7 +65,38 @@ public class MainPageTest extends BaseTest {
         Assert.assertEquals(0, unrecognizedCodes.size());
     }
 
+    @Test
     public void checkReverseFlightButton() {
+        page.fillCity(page.inputAirportFrom, "kbp")
+                .fillCity(page.inputAirportTo, "cdg")
+                .fillDate(5);
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        Assert.assertTrue(!driver.findElement(page.backFlightButton).getAttribute("class").contains("disabled"));
+    }
 
+    @Test
+    public void testFillDate() {
+        page.fillDate(5);
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testFillDate2() {
+        driver.findElement(page.departureDayButton).click();
+        driver.findElement(By.xpath(".//*[@id='sidebar']/div/div/div/div/div[2]/div[3]/div/div[5]/div/div[2]/div[1]/table/tbody/tr[3]/td[2]")).click();
+        page.fillCity(page.inputAirportFrom, "kbp");
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

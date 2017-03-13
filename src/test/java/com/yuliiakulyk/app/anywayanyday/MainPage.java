@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import ru.yandex.qatools.allure.annotations.Step;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -22,8 +23,9 @@ public class MainPage extends BasePage {
     public By recognizedAirportCodeCityTo = By.cssSelector("div.ui-input.arrival-airport.col100>span.airport-code");
     public By geoSuggestAirportCodes = By.cssSelector("ul.geo-suggest>li>div.code");
     public By backFlightButton = By.className("back-flight");
-    public By dayInCalendar = By.className("day");
-    public By departureDayButton = By.cssSelector("div.ui-input.ui-input-date.date.col100.select.active");
+    public By dayInCalendar1Month = By.xpath(".//*[@id='sidebar']/div/div/div/div/div[2]/div[3]/div/div[5]/div/div[2]/div[1]/table/tbody/tr/td");
+    public By departureDayButton = By.cssSelector("div.ui-input.ui-input-date.date.col100");
+    private By dayInCalendar2Month = By.xpath(".//*[@id='sidebar']/div/div/div/div/div[2]/div[3]/div/div[5]/div/div[2]/div[2]/table/tbody/tr/td");
 
     public MainPage(WebDriver driver) {
         super(driver);
@@ -86,16 +88,22 @@ public class MainPage extends BasePage {
         return this;
     }
 
-//    public MainPage fillDate(int daysFromToday) {
-//        driver.findElement(departureDayButton).click();
-//        List<WebElement> availableDays = driver.findElements(dayInCalendar);
-//        int j = 0;
-//
-//        for (int i = 0; i < availableDays.size(); i++) {
-//            if (!availableDays.get(i).isEnabled()) {
-//
-//            }
-//        }
-//        return this;
-//    }
+    public MainPage fillDate(int daysFromToday) {
+        driver.findElement(departureDayButton).click();
+        List<WebElement> availableDays = driver.findElements(dayInCalendar1Month);
+        availableDays.addAll(driver.findElements(dayInCalendar2Month));
+        Iterator<WebElement> iter = availableDays.iterator();
+        while (iter.hasNext()) {
+            WebElement e = iter.next();
+            if ((e.getText().equals("")) || (e.getAttribute("class").contains("inactive"))) {
+                iter.remove();
+            }
+        }
+        availableDays.get(daysFromToday%availableDays.size()).click();
+        return this;
+    }
+
+    public void fillAllFields1 (String cityFrom, String cityTo, int daysFromToday) {
+        
+    }
 }
