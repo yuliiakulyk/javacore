@@ -3,7 +3,7 @@
 3. verify another form appears on clicking "Reverse flight". +
 4. verify additional input fields appear on clicking "Continue the route", previous destination is departure point. +
 5. click on passengers - counter of adults, kids appears. +
-6. click on + and - sign, number of passengers changes on PASSENGERS and counter.
+6. click on + and - sign, number of passengers changes on PASSENGERS and counter. +
 7. check "clear" appears when city from, city to, date are filled. Check it clears the fields.
 8. check after city from, city to, date are filled they are grouped together.
 9. check currency options.

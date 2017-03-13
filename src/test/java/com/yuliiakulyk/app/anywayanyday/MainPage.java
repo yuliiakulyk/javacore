@@ -136,46 +136,79 @@ public class MainPage extends BasePage {
         return this;
     }
 
-    public MainPage changeAdults(boolean ifIncrease) {
-        if (ifIncrease) {
-            Assert.assertTrue(checkPassengerCountsChange(adultCount, adultQuantity, true, adultsPlus));
-        } else {
-            Assert.assertTrue(checkPassengerCountsChange(adultCount, adultQuantity, false, adultsMinus));
-        }
-        return this;
+    public enum Action {
+        INCREASE,
+        DECREASE
     }
 
-    public MainPage changeChildren(boolean ifIncrease) {
+    public enum CounterChange {
+        YES,
+        NO
+    }
+
+    public MainPage changeAdults(Action action, int number, CounterChange counterChange) {
         driver.findElement(passengersButton).click();
-        if (ifIncrease) {
-            Assert.assertTrue(checkPassengerCountsChange(childrenCount, childrenQuantity, true, childrenPlus));
-        } else {
-            Assert.assertTrue(checkPassengerCountsChange(childrenCount, childrenQuantity, false, childrenMinus));
+        for (int i = 0; i < number; i++) {
+            if (action == Action.INCREASE) {
+                Assert.assertEquals(checkPassengerCountsChange(adultCount, adultQuantity, Action.INCREASE, adultsPlus),
+                        counterChange);
+            } else {
+                Assert.assertEquals(checkPassengerCountsChange(adultCount, adultQuantity, Action.DECREASE, adultsMinus),
+                        counterChange);
+            }
         }
-        return this;
-    }
-
-    public MainPage changeInfants(boolean ifIncrease) {
-        if (ifIncrease) {
-            Assert.assertTrue(checkPassengerCountsChange(infantCount, infantQuantity, true, infantsPlus));
-        } else {
-            Assert.assertTrue(checkPassengerCountsChange(infantCount, infantQuantity, false, infantsMinus));
-        }
-        return this;
-    }
-
-    public boolean checkPassengerCountsChange(By count, By quantity, boolean ifIncrease, By plusOrMinusButton) {
         driver.findElement(passengersButton).click();
+        return this;
+    }
+
+    public MainPage changeChildren(Action action, int number, CounterChange counterChange) {
+        driver.findElement(passengersButton).click();
+        for (int i = 0; i < number; i++) {
+            if (action == Action.INCREASE) {
+                Assert.assertEquals(checkPassengerCountsChange(childrenCount, childrenQuantity, Action.INCREASE, childrenPlus),
+                        counterChange);
+            } else {
+                Assert.assertEquals(checkPassengerCountsChange(childrenCount, childrenQuantity, Action.DECREASE, childrenMinus),
+                        counterChange);
+            }
+        }
+        driver.findElement(passengersButton).click();
+        return this;
+    }
+
+    public MainPage changeInfants(Action action, int number, CounterChange counterChange) {
+        driver.findElement(passengersButton).click();
+        for (int i = 0; i < number; i++) {
+            if (action == Action.INCREASE) {
+                Assert.assertEquals(checkPassengerCountsChange(infantCount, infantQuantity, Action.INCREASE, infantsPlus),
+                        counterChange);
+            } else {
+                Assert.assertEquals(checkPassengerCountsChange(infantCount, infantQuantity, Action.DECREASE, infantsMinus),
+                        counterChange);
+            }
+        }
+        driver.findElement(passengersButton).click();
+        return this;
+    }
+
+    public CounterChange checkPassengerCountsChange(By count, By quantity, Action action, By plusOrMinusButton) {
         int counter0 = Integer.parseInt(driver.findElement(count).getText());
         int quantity0 = Integer.parseInt(driver.findElement(quantity).getText().substring(2));
         driver.findElement(plusOrMinusButton).click();
         int counter1 = Integer.parseInt(driver.findElement(count).getText());
         int quantity1 = Integer.parseInt(driver.findElement(quantity).getText().substring(2));
-        driver.findElement(passengersButton).click();
-        if (ifIncrease) {
-            return ((counter1 - counter0) == 1 && (quantity1 - quantity0) == 1);
+        if (action == Action.INCREASE) {
+            if ((counter1 - counter0) == 1 && (quantity1 - quantity0) == 1) {
+                return CounterChange.YES;
+            } else {
+                return CounterChange.NO;
+            }
         } else {
-            return ((counter1 - counter0) == -1 && (quantity1 - quantity0) == -1);
+            if ((counter1 - counter0) == -1 && (quantity1 - quantity0) == -1) {
+                return CounterChange.YES;
+            } else {
+                return CounterChange.NO;
+            }
         }
     }
 }

@@ -14,6 +14,10 @@ public class MainPageTest extends BaseTest {
     public MainPage page;
     public String cityFromCode = "kbp";
     public String cityToCode = "kbp";
+    public int maxPassengers = 9;
+    public int maxAdults = 6;
+    public int maxChildren = 4;
+    public int maxInfants = 2;
 
     @Before
     public void preconditions() {
@@ -108,35 +112,56 @@ public class MainPageTest extends BaseTest {
 
     @Test
     public void checkAdultIncrease() {
-        page.changeAdults(true);
+        page.changeAdults(MainPage.Action.INCREASE, 1, MainPage.CounterChange.YES);
     }
 
     @Test
     public void checkAdultDecrease() {
-        page.changeAdults(true)
-        .changeAdults(false);
+        page.changeAdults(MainPage.Action.INCREASE, 1, MainPage.CounterChange.YES)
+        .changeAdults(MainPage.Action.DECREASE, 1, MainPage.CounterChange.YES);
     }
 
     @Test
     public void checkChildrenIncrease() {
-        page.changeChildren(true);
+        page.changeChildren(MainPage.Action.INCREASE, 1, MainPage.CounterChange.YES);
     }
 
     @Test
     public void checkChildrenDecrease() {
-        page.changeChildren(true)
-                .changeChildren(false);
+        page.changeChildren(MainPage.Action.INCREASE, 1, MainPage.CounterChange.YES)
+                .changeChildren(MainPage.Action.DECREASE, 1, MainPage.CounterChange.YES);
     }
 
     @Test
     public void checkInfantsIncrease() {
-        page.changeInfants(true);
+        page.changeInfants(MainPage.Action.INCREASE, 1, MainPage.CounterChange.YES);
     }
 
     @Test
     public void checkInfantsDecrease() {
-        page.changeInfants(true)
-                .changeInfants(false);
+        page.changeInfants(MainPage.Action.INCREASE, 1, MainPage.CounterChange.YES)
+                .changeInfants(MainPage.Action.DECREASE, 1, MainPage.CounterChange.YES);
     }
-    
+
+    @Test
+    public void checkMaxAdults() {
+        page.changeAdults(MainPage.Action.INCREASE, maxAdults - 1, MainPage.CounterChange.YES);
+    }
+
+    @Test
+    public void checkAboveMaxAdults() {
+        page.changeAdults(MainPage.Action.INCREASE, maxAdults - 1, MainPage.CounterChange.YES)
+                .changeAdults(MainPage.Action.INCREASE, 1, MainPage.CounterChange.NO);
+    }
+
+    @Test
+    public void checkMaxChildren() {
+        page.changeChildren(MainPage.Action.INCREASE, maxChildren, MainPage.CounterChange.YES);
+    }
+
+    @Test
+    public void checkAboveMaxChildren() {
+        page.changeChildren(MainPage.Action.INCREASE, maxChildren, MainPage.CounterChange.YES)
+                .changeChildren(MainPage.Action.INCREASE, 1, MainPage.CounterChange.NO);
+    }
 }
