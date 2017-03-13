@@ -4,8 +4,6 @@ import com.yuliiakulyk.runners.convertors.and.files.classes.FileWork;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -14,6 +12,8 @@ import java.util.Arrays;
  */
 public class MainPageTest extends BaseTest {
     public MainPage page;
+    public String cityFromCode = "kbp";
+    public String cityToCode = "kbp";
 
     @Before
     public void preconditions() {
@@ -66,10 +66,8 @@ public class MainPageTest extends BaseTest {
     }
 
     @Test
-    public void checkReverseFlightButton() {
-        page.fillCity(page.inputAirportFrom, "kbp")
-                .fillCity(page.inputAirportTo, "cdg")
-                .fillDate(5);
+    public void checkReverseFlightButtonEnabled() {
+        page.fillAllFields(cityFromCode, cityToCode, 5);
         try {
             Thread.sleep(500);
         } catch (InterruptedException e) {
@@ -79,24 +77,66 @@ public class MainPageTest extends BaseTest {
     }
 
     @Test
-    public void testFillDate() {
-        page.fillDate(5);
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+    public void checkReverseFlightForm() {
+        page.fillAllFields(cityFromCode, cityToCode, 5)
+                .elementIsDisplayed(page.tripInfoContainer)
+                .elementIsDisplayed(page.inputAirportFrom)
+                .elementIsDisplayed(page.inputAirportTo)
+                .elementIsDisplayed(page.departureDayButton);
+        Assert.assertTrue(driver.findElement(page.recognizedAirportCodeCityFrom).getText().equalsIgnoreCase(cityToCode));
+        Assert.assertTrue(driver.findElement(page.recognizedAirportCodeCityTo).getText().equalsIgnoreCase(cityFromCode));
     }
 
     @Test
-    public void testFillDate2() {
-        driver.findElement(page.departureDayButton).click();
-        driver.findElement(By.xpath(".//*[@id='sidebar']/div/div/div/div/div[2]/div[3]/div/div[5]/div/div[2]/div[1]/table/tbody/tr[3]/td[2]")).click();
-        page.fillCity(page.inputAirportFrom, "kbp");
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+    public void checkAnotherFlightButton() {
+        page.fillAllFields(cityFromCode, cityToCode, 5);
+        driver.findElement(page.anotherDestinationButton).click();
+        page.elementIsDisplayed(page.tripInfoContainer)
+                .elementIsDisplayed(page.inputAirportFrom)
+                .elementIsDisplayed(page.inputAirportTo)
+                .elementIsDisplayed(page.departureDayButton);
+        Assert.assertTrue(driver.findElement(page.recognizedAirportCodeCityFrom).getText().equalsIgnoreCase(cityToCode));
     }
+
+    @Test
+    public void checkPassengersCounterAppear() {
+        driver.findElement(page.passengersButton).click();
+        page.elementIsDisplayed(page.adults)
+                .elementIsDisplayed(page.children)
+                .elementIsDisplayed(page.infants);
+    }
+
+    @Test
+    public void checkAdultIncrease() {
+        page.changeAdults(true);
+    }
+
+    @Test
+    public void checkAdultDecrease() {
+        page.changeAdults(true)
+        .changeAdults(false);
+    }
+
+    @Test
+    public void checkChildrenIncrease() {
+        page.changeChildren(true);
+    }
+
+    @Test
+    public void checkChildrenDecrease() {
+        page.changeChildren(true)
+                .changeChildren(false);
+    }
+
+    @Test
+    public void checkInfantsIncrease() {
+        page.changeInfants(true);
+    }
+
+    @Test
+    public void checkInfantsDecrease() {
+        page.changeInfants(true)
+                .changeInfants(false);
+    }
+    
 }

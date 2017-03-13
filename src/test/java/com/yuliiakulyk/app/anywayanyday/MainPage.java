@@ -25,7 +25,27 @@ public class MainPage extends BasePage {
     public By backFlightButton = By.className("back-flight");
     public By dayInCalendar1Month = By.xpath(".//*[@id='sidebar']/div/div/div/div/div[2]/div[3]/div/div[5]/div/div[2]/div[1]/table/tbody/tr/td");
     public By departureDayButton = By.cssSelector("div.ui-input.ui-input-date.date.col100");
-    private By dayInCalendar2Month = By.xpath(".//*[@id='sidebar']/div/div/div/div/div[2]/div[3]/div/div[5]/div/div[2]/div[2]/table/tbody/tr/td");
+    public By dayInCalendar2Month = By.xpath(".//*[@id='sidebar']/div/div/div/div/div[2]/div[3]/div/div[5]/div/div[2]/div[2]/table/tbody/tr/td");
+    public By anotherDestinationButton = By.className("empty-flight");
+    public By tripInfoContainer = By.className("segment-info-container");
+    public By passengersButton = By.cssSelector(".col50.select-passenger.ui-black.ui-black-border");
+    public By adults = By.cssSelector("li.ui-select-item-adult");
+    public By children = By.cssSelector("li.ui-select-item-children");
+    public By infants = By.cssSelector("li.ui-select-item-infant");
+    public By rate = By.className("select-rate");
+    public By adultsPlus = By.cssSelector("li.ui-select-item-adult>div.container-plus");
+    public By adultsMinus = By.cssSelector("li.ui-select-item-adult>div.container-minus");
+    public By childrenPlus = By.cssSelector("li.ui-select-item-children>div.container-plus");
+    public By childrenMinus = By.cssSelector("li.ui-select-item-children>div.container-minus");
+    public By infantsPlus = By.cssSelector("li.ui-select-item-infant>div.container-plus");
+    public By infantsMinus = By.cssSelector("li.ui-select-item-infant>div.container-minus");
+    public By adultCount = By.cssSelector("span.adult-count");
+    public By adultQuantity = By.cssSelector("span.quantity-adult");
+    public By childrenCount = By.cssSelector("span.children-count");
+    public By childrenQuantity = By.cssSelector("span.quantity-children");
+    public By infantCount = By.cssSelector("span.infant-count");
+    public By infantQuantity = By.cssSelector("span.quantity-infant");
+
 
     public MainPage(WebDriver driver) {
         super(driver);
@@ -44,7 +64,7 @@ public class MainPage extends BasePage {
         return suggestions.size();
     }
 
-    @Step("Check airpost with code [1]")
+    @Step("Check airport with code [1]")
     public void checkOneCode(By inputField, String code, By recognizedCode, ArrayList<String> unrecognizedCodes) {
         WebElement field = driver.findElement(inputField);
         field.clear();
@@ -85,6 +105,7 @@ public class MainPage extends BasePage {
         field.clear();
         field.sendKeys(text);
         field.sendKeys(Keys.ENTER);
+        Assert.assertTrue(field.getAttribute("value").equalsIgnoreCase(text));
         return this;
     }
 
@@ -103,7 +124,58 @@ public class MainPage extends BasePage {
         return this;
     }
 
-    public void fillAllFields1 (String cityFrom, String cityTo, int daysFromToday) {
-        
+    public MainPage fillAllFields (String cityFrom, String cityTo, int daysFromToday) {
+        fillCity(inputAirportFrom, cityFrom);
+        fillCity(inputAirportTo, cityTo);
+        fillDate(daysFromToday);
+        return this;
+    }
+
+    public MainPage elementIsDisplayed(By element) {
+        Assert.assertTrue(driver.findElement(element).isDisplayed());
+        return this;
+    }
+
+    public MainPage changeAdults(boolean ifIncrease) {
+        if (ifIncrease) {
+            Assert.assertTrue(checkPassengerCountsChange(adultCount, adultQuantity, true, adultsPlus));
+        } else {
+            Assert.assertTrue(checkPassengerCountsChange(adultCount, adultQuantity, false, adultsMinus));
+        }
+        return this;
+    }
+
+    public MainPage changeChildren(boolean ifIncrease) {
+        driver.findElement(passengersButton).click();
+        if (ifIncrease) {
+            Assert.assertTrue(checkPassengerCountsChange(childrenCount, childrenQuantity, true, childrenPlus));
+        } else {
+            Assert.assertTrue(checkPassengerCountsChange(childrenCount, childrenQuantity, false, childrenMinus));
+        }
+        return this;
+    }
+
+    public MainPage changeInfants(boolean ifIncrease) {
+        if (ifIncrease) {
+            Assert.assertTrue(checkPassengerCountsChange(infantCount, infantQuantity, true, infantsPlus));
+        } else {
+            Assert.assertTrue(checkPassengerCountsChange(infantCount, infantQuantity, false, infantsMinus));
+        }
+        return this;
+    }
+
+    public boolean checkPassengerCountsChange(By count, By quantity, boolean ifIncrease, By plusOrMinusButton) {
+        driver.findElement(passengersButton).click();
+        int counter0 = Integer.parseInt(driver.findElement(count).getText());
+        int quantity0 = Integer.parseInt(driver.findElement(quantity).getText().substring(2));
+        driver.findElement(plusOrMinusButton).click();
+        int counter1 = Integer.parseInt(driver.findElement(count).getText());
+        int quantity1 = Integer.parseInt(driver.findElement(quantity).getText().substring(2));
+        driver.findElement(passengersButton).click();
+        if (ifIncrease) {
+            return ((counter1 - counter0) == 1 && (quantity1 - quantity0) == 1);
+        } else {
+            return ((counter1 - counter0) == -1 && (quantity1 - quantity0) == -1);
+        }
     }
 }
