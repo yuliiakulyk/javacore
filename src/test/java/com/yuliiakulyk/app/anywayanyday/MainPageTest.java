@@ -1,15 +1,21 @@
 package com.yuliiakulyk.app.anywayanyday;
 
 import com.yuliiakulyk.runners.convertors.and.files.classes.FileWork;
+import junitparams.FileParameters;
+import junitparams.JUnitParamsRunner;
+import junitparams.mappers.CsvWithHeaderMapper;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
  * Created by Yuliia Kulyk on 08.03.2017.
  */
+@RunWith(JUnitParamsRunner.class)
 public class MainPageTest extends BaseTest {
     public MainPage page;
     public String cityFromCode = "kbp";
@@ -163,5 +169,26 @@ public class MainPageTest extends BaseTest {
     public void checkAboveMaxChildren() {
         page.changeChildren(MainPage.Action.INCREASE, maxChildren, MainPage.CounterChange.YES)
                 .changeChildren(MainPage.Action.INCREASE, 1, MainPage.CounterChange.NO);
+    }
+
+    @Test
+    @FileParameters(value = "src\\test\\java\\com\\yuliiakulyk\\app\\anywayanyday\\maxpassengers.txt", mapper = CsvWithHeaderMapper.class)
+    public void checkMaxPassengers(int adults, int children, int infants, String excessPassenger) {
+        page.changeAdults(MainPage.Action.INCREASE, adults - 1, MainPage.CounterChange.YES)
+                .changeChildren(MainPage.Action.INCREASE, children, MainPage.CounterChange.YES)
+                .changeInfants(MainPage.Action.INCREASE, infants, MainPage.CounterChange.YES);
+        switch (excessPassenger) {
+            case "adult":
+                page.changeAdults(MainPage.Action.INCREASE, 1, MainPage.CounterChange.NO);
+                break;
+            case "child":
+                page.changeChildren(MainPage.Action.INCREASE, 1, MainPage.CounterChange.NO);
+                break;
+            case "infant":
+                page.changeInfants(MainPage.Action.INCREASE, 1, MainPage.CounterChange.NO);
+                break;
+            default:
+                break;
+        }
     }
 }

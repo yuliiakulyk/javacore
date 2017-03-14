@@ -1,0 +1,4 @@
+adults, children, infants
+3,4,2,adult
+5,3,1,child
+5,3,1,infant
