@@ -64,7 +64,7 @@ public class MainPage extends BasePage {
         return suggestions.size();
     }
 
-    @Step("Check airport with code [1]")
+    @Step("Check airport with code {1}")
     public void checkOneCode(By inputField, String code, By recognizedCode, ArrayList<String> unrecognizedCodes) {
         WebElement field = driver.findElement(inputField);
         field.clear();

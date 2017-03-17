@@ -172,6 +172,19 @@ public class MainPageTest extends BaseTest {
     }
 
     @Test
+    public void checkMaxInfants() {
+        page.changeAdults(MainPage.Action.INCREASE, maxInfants - 1, MainPage.CounterChange.YES)
+                .changeInfants(MainPage.Action.INCREASE, maxInfants, MainPage.CounterChange.YES);
+    }
+
+    @Test
+    public void checkAboveMaxInfants() {
+        page.changeAdults(MainPage.Action.INCREASE, maxInfants - 1, MainPage.CounterChange.YES)
+                .changeInfants(MainPage.Action.INCREASE, maxInfants, MainPage.CounterChange.YES)
+                .changeInfants(MainPage.Action.INCREASE, maxInfants, MainPage.CounterChange.NO);
+    }
+
+    @Test
     @FileParameters(value = "src\\test\\java\\com\\yuliiakulyk\\app\\anywayanyday\\maxpassengers.txt", mapper = CsvWithHeaderMapper.class)
     public void checkMaxPassengers(int adults, int children, int infants, String excessPassenger) {
         page.changeAdults(MainPage.Action.INCREASE, adults - 1, MainPage.CounterChange.YES)
