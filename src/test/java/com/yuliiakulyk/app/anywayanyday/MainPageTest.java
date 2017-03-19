@@ -8,6 +8,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import ru.yandex.qatools.allure.annotations.Description;
+import ru.yandex.qatools.allure.annotations.Title;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,11 +21,12 @@ import java.util.Arrays;
 public class MainPageTest extends BaseTest {
     public MainPage page;
     public String cityFromCode = "kbp";
-    public String cityToCode = "kbp";
+    public String cityToCode = "cdg";
     public int maxPassengers = 9;
     public int maxAdults = 6;
     public int maxChildren = 4;
     public int maxInfants = 2;
+    public int daysToDeparture = 5;
 
     @Before
     public void preconditions() {
@@ -31,26 +34,36 @@ public class MainPageTest extends BaseTest {
         driver.get(page.baseUrlBegginning + page.baseUrlEnd);
     }
 
+    @Title("Check field is active on click")
+    @Description("Check city from is active")
     @Test
     public void checkCityFromActive() {
         Assert.assertTrue(page.checkFieldActive(page.inputAirportFrom));
     }
 
+    @Title("Check field is active on click")
+    @Description("Check city to is active")
     @Test
     public void checkCityToActive() {
         Assert.assertTrue(page.checkFieldActive(page.inputAirportTo));
     }
 
+    @Title("Check geo suggestions")
+    @Description("Check city from suggestions of multiple airports")
     @Test
     public void checkCityFromMultipleSuggestions() {
         Assert.assertTrue(page.numberOfGeoSuggests("Paris", page.inputAirportFrom) >= 2);
     }
 
+    @Title("Check geo suggestions")
+    @Description("Check city to suggestions of multiple airports")
     @Test
     public void checkCityToMultipleSuggestions() {
         Assert.assertTrue(page.numberOfGeoSuggests("Paris", page.inputAirportTo) >= 2);
     }
 
+    @Title("Check geo suggestions")
+    @Description("Check airport codes are recognized in city from field")
     @Test
     public void checkRecognitionOfAirportCodesCityFrom() {
         FileWork fileWork = new FileWork();
@@ -63,6 +76,8 @@ public class MainPageTest extends BaseTest {
         Assert.assertEquals(0, unrecognizedCodes.size());
     }
 
+    @Title("Check geo suggestions")
+    @Description("Check airport codes are recognized in city to field")
     @Test
     public void checkRecognitionOfAirportCodesCityTo() {
         FileWork fileWork = new FileWork();
@@ -83,37 +98,38 @@ public class MainPageTest extends BaseTest {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        Assert.assertTrue(!driver.findElement(page.backFlightButton).getAttribute("class").contains("disabled"));
+        Assert.assertTrue(!driver.findElement(page.returnFlightButton).getAttribute("class").contains("disabled"));
     }
 
     @Test
     public void checkReverseFlightForm() {
-        page.fillAllFields(cityFromCode, cityToCode, 5)
-                .elementIsDisplayed(page.tripInfoContainer)
-                .elementIsDisplayed(page.inputAirportFrom)
-                .elementIsDisplayed(page.inputAirportTo)
-                .elementIsDisplayed(page.departureDayButton);
+        page.fillAllFields(cityFromCode, cityToCode, daysToDeparture)
+                .click(page.returnFlightButton, page)
+                .checkElementIsDisplayed(page.tripInfoContainer, page)
+                .checkElementIsDisplayed(page.inputAirportFrom, page)
+                .checkElementIsDisplayed(page.inputAirportTo, page)
+                .checkElementIsDisplayed(page.departureDateButton, page);
         Assert.assertTrue(driver.findElement(page.recognizedAirportCodeCityFrom).getText().equalsIgnoreCase(cityToCode));
         Assert.assertTrue(driver.findElement(page.recognizedAirportCodeCityTo).getText().equalsIgnoreCase(cityFromCode));
     }
 
     @Test
     public void checkAnotherFlightButton() {
-        page.fillAllFields(cityFromCode, cityToCode, 5);
+        page.fillAllFields(cityFromCode, cityToCode, daysToDeparture);
         driver.findElement(page.anotherDestinationButton).click();
-        page.elementIsDisplayed(page.tripInfoContainer)
-                .elementIsDisplayed(page.inputAirportFrom)
-                .elementIsDisplayed(page.inputAirportTo)
-                .elementIsDisplayed(page.departureDayButton);
+        page.checkElementIsDisplayed(page.tripInfoContainer, page)
+                .checkElementIsDisplayed(page.inputAirportFrom, page)
+                .checkElementIsDisplayed(page.inputAirportTo, page)
+                .checkElementIsDisplayed(page.departureDateButton, page);
         Assert.assertTrue(driver.findElement(page.recognizedAirportCodeCityFrom).getText().equalsIgnoreCase(cityToCode));
     }
 
     @Test
     public void checkPassengersCounterAppear() {
         driver.findElement(page.passengersButton).click();
-        page.elementIsDisplayed(page.adults)
-                .elementIsDisplayed(page.children)
-                .elementIsDisplayed(page.infants);
+        page.checkElementIsDisplayed(page.adults, page)
+                .checkElementIsDisplayed(page.children, page)
+                .checkElementIsDisplayed(page.infants, page);
     }
 
     @Test
@@ -124,7 +140,7 @@ public class MainPageTest extends BaseTest {
     @Test
     public void checkAdultDecrease() {
         page.changeAdults(MainPage.Action.INCREASE, 1, MainPage.CounterChange.YES)
-        .changeAdults(MainPage.Action.DECREASE, 1, MainPage.CounterChange.YES);
+                .changeAdults(MainPage.Action.DECREASE, 1, MainPage.CounterChange.YES);
     }
 
     @Test
@@ -204,4 +220,31 @@ public class MainPageTest extends BaseTest {
                 break;
         }
     }
+
+    @Test
+    @Title("Check clear button")
+    @Description("1-way trip without changing planes")
+    public void checkClearButton1WayTrip() {
+        page.fillAllFields(cityFromCode, cityToCode, daysToDeparture)
+                .checkElementIsDisplayed(page.clearButton, page)
+                .click(page.clearButton, page)
+                .checkFieldEmpty(page.inputAirportFrom, page)
+                .checkFieldEmpty(page.inputAirportTo, page)
+                .checkElementIsDisplayed(page.departureDateButton, page);
+    }
+
+    @Test
+    @Title("Check clear button")
+    @Description("Trip with return flight")
+    public void checkClearButtonReturnFlight() {
+        page.fillAllFields(cityFromCode, cityToCode, daysToDeparture)
+                .checkElementIsDisplayed(page.clearButton, page)
+                .click(page.returnFlightButton, page)
+                .click(page.departureDateButton, page)
+                .fillDate(daysToDeparture + 2)
+                .click(page.clearButton, page)
+                .checkFieldEmpty(page.inputAirportTo, page)
+                .checkElementIsDisplayed(page.departureDateButton, page);
+    }
+    
 }

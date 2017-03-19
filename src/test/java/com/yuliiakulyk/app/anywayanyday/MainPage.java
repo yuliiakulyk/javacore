@@ -6,6 +6,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import ru.yandex.qatools.allure.annotations.Step;
+import ru.yandex.qatools.allure.annotations.Stories;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -16,23 +17,31 @@ import java.util.concurrent.TimeUnit;
  * Created by Yuliia Kulyk on 08.03.2017.
  */
 public class MainPage extends BasePage {
+
+    ///////// INPUTS OF THE FORM
     public By inputAirportFrom = By.cssSelector("input.ui-input-filed.city-field");
     public By inputAirportTo = By.cssSelector("div.ui-input.arrival-airport.col100>div>input");
     public By geoSuggest = By.cssSelector("ul.geo-suggest>li");
     public By recognizedAirportCodeCityFrom = By.cssSelector("div.ui-input.departure-airport.col100>span.airport-code");
     public By recognizedAirportCodeCityTo = By.cssSelector("div.ui-input.arrival-airport.col100>span.airport-code");
     public By geoSuggestAirportCodes = By.cssSelector("ul.geo-suggest>li>div.code");
-    public By backFlightButton = By.className("back-flight");
+    public By returnFlightButton = By.className("back-flight");
     public By dayInCalendar1Month = By.xpath(".//*[@id='sidebar']/div/div/div/div/div[2]/div[3]/div/div[5]/div/div[2]/div[1]/table/tbody/tr/td");
-    public By departureDayButton = By.cssSelector("div.ui-input.ui-input-date.date.col100");
+    public By departureDateButton = By.cssSelector("div.ui-input.ui-input-date.date.col100");
     public By dayInCalendar2Month = By.xpath(".//*[@id='sidebar']/div/div/div/div/div[2]/div[3]/div/div[5]/div/div[2]/div[2]/table/tbody/tr/td");
-    public By anotherDestinationButton = By.className("empty-flight");
     public By tripInfoContainer = By.className("segment-info-container");
+
+    ///////// BUTTONS
+    public By anotherDestinationButton = By.className("empty-flight");
     public By passengersButton = By.cssSelector(".col50.select-passenger.ui-black.ui-black-border");
+    public By rateButton = By.className("select-rate");
+    public By clearButton = By.className("awad-widget-clear");
+
+    ///////// NUMBER OF PASSENGERS
     public By adults = By.cssSelector("li.ui-select-item-adult");
     public By children = By.cssSelector("li.ui-select-item-children");
     public By infants = By.cssSelector("li.ui-select-item-infant");
-    public By rate = By.className("select-rate");
+
     public By adultsPlus = By.cssSelector("li.ui-select-item-adult>div.container-plus");
     public By adultsMinus = By.cssSelector("li.ui-select-item-adult>div.container-minus");
     public By childrenPlus = By.cssSelector("li.ui-select-item-children>div.container-plus");
@@ -100,17 +109,9 @@ public class MainPage extends BasePage {
         }
     }
 
-    public MainPage fillCity(By cityField, String text) {
-        WebElement field = driver.findElement(cityField);
-        field.clear();
-        field.sendKeys(text);
-        field.sendKeys(Keys.ENTER);
-        Assert.assertTrue(field.getAttribute("value").equalsIgnoreCase(text));
-        return this;
-    }
-
+    @Step("Fill date {0} days from today")
     public MainPage fillDate(int daysFromToday) {
-        driver.findElement(departureDayButton).click();
+        driver.findElement(departureDateButton).click();
         List<WebElement> availableDays = driver.findElements(dayInCalendar1Month);
         availableDays.addAll(driver.findElements(dayInCalendar2Month));
         Iterator<WebElement> iter = availableDays.iterator();
@@ -120,19 +121,15 @@ public class MainPage extends BasePage {
                 iter.remove();
             }
         }
-        availableDays.get(daysFromToday%availableDays.size()).click();
+        availableDays.get(daysFromToday % availableDays.size()).click();
         return this;
     }
 
-    public MainPage fillAllFields (String cityFrom, String cityTo, int daysFromToday) {
-        fillCity(inputAirportFrom, cityFrom);
-        fillCity(inputAirportTo, cityTo);
+    @Step("Fill trip details: city from {0}, city to {1}, days from today {2}")
+    public MainPage fillAllFields(String cityFrom, String cityTo, int daysFromToday) {
+        fillField(inputAirportFrom, cityFrom, this);
+        fillField(inputAirportTo, cityTo, this);
         fillDate(daysFromToday);
-        return this;
-    }
-
-    public MainPage elementIsDisplayed(By element) {
-        Assert.assertTrue(driver.findElement(element).isDisplayed());
         return this;
     }
 
@@ -146,6 +143,7 @@ public class MainPage extends BasePage {
         NO
     }
 
+    @Step("Change number of passengers adults")
     public MainPage changeAdults(Action action, int number, CounterChange counterChange) {
         driver.findElement(passengersButton).click();
         for (int i = 0; i < number; i++) {
@@ -161,6 +159,7 @@ public class MainPage extends BasePage {
         return this;
     }
 
+    @Step("Change number of passengers children")
     public MainPage changeChildren(Action action, int number, CounterChange counterChange) {
         driver.findElement(passengersButton).click();
         for (int i = 0; i < number; i++) {
@@ -176,6 +175,7 @@ public class MainPage extends BasePage {
         return this;
     }
 
+    @Step("Change number of passengers infants")
     public MainPage changeInfants(Action action, int number, CounterChange counterChange) {
         driver.findElement(passengersButton).click();
         for (int i = 0; i < number; i++) {
@@ -211,4 +211,5 @@ public class MainPage extends BasePage {
             }
         }
     }
+
 }
