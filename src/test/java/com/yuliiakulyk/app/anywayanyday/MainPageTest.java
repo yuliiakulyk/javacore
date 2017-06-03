@@ -246,5 +246,5 @@ public class MainPageTest extends BaseTest {
                 .checkFieldEmpty(page.inputAirportTo, page)
                 .checkElementIsDisplayed(page.departureDateButton, page);
     }
-    
+
 }
